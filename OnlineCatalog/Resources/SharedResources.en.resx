@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="2fa has been disabled. You can reenable 2fa when you setup an authenticator app" xml:space="preserve">
+    <value>2fa has been disabled. You can reenable 2fa when you setup an authenticator app</value>
+  </data>
+  <data name="A final grade already exists for this subject!" xml:space="preserve">
+    <value>A final grade already exists for this subject!</value>
+  </data>
+  <data name="A rating was already added, you cannot add another one!" xml:space="preserve">
+    <value>A rating was already added, you cannot add another one!</value>
+  </data>
+  <data name="Absences" xml:space="preserve">
+    <value>Absences</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Actions</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="Add a new absence" xml:space="preserve">
+    <value>Add a new absence</value>
+  </data>
+  <data name="Add a new assignment" xml:space="preserve">
+    <value>Add a new assignment</value>
+  </data>
+  <data name="Add a new classroom" xml:space="preserve">
+    <value>Add a new classroom</value>
+  </data>
+  <data name="Add a new message" xml:space="preserve">
+    <value>Add a new message</value>
+  </data>
+  <data name="Add a new pupil" xml:space="preserve">
+    <value>Add a new pupil</value>
+  </data>
+  <data name="Add a new role" xml:space="preserve">
+    <value>Add a new role</value>
+  </data>
+  <data name="Add a new specialization" xml:space="preserve">
+    <value>Add a new specialization</value>
+  </data>
+  <data name="Add a new subject" xml:space="preserve">
+    <value>Add a new subject</value>
+  </data>
+  <data name="Add a new teacher" xml:space="preserve">
+    <value>Add a new teacher</value>
+  </data>
+  <data name="Add authenticator app" xml:space="preserve">
+    <value>Add authenticator app</value>
+  </data>
+  <data name="AddAbsence" xml:space="preserve">
+    <value>Add absence</value>
+  </data>
+  <data name="AddANewYearStructure" xml:space="preserve">
+    <value>Add a new year structure</value>
+  </data>
+  <data name="AddAssignment" xml:space="preserve">
+    <value>Add assignment</value>
+  </data>
+  <data name="AddClassroom" xml:space="preserve">
+    <value>Add classroom</value>
+  </data>
+  <data name="AddGrade" xml:space="preserve">
+    <value>Add grade</value>
+  </data>
+  <data name="AddKids" xml:space="preserve">
+    <value>Add kids</value>
+  </data>
+  <data name="AddMessage" xml:space="preserve">
+    <value>Add message</value>
+  </data>
+  <data name="AddNewPeriod" xml:space="preserve">
+    <value>Add new period</value>
+  </data>
+  <data name="AddParent" xml:space="preserve">
+    <value>Add parent</value>
+  </data>
+  <data name="AddPupil" xml:space="preserve">
+    <value>Add pupil</value>
+  </data>
+  <data name="AddPupils" xml:space="preserve">
+    <value>Add pupils</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="AddRole" xml:space="preserve">
+    <value>Add role</value>
+  </data>
+  <data name="AddSpecialization" xml:space="preserve">
+    <value>Add specialization</value>
+  </data>
+  <data name="AddSubject" xml:space="preserve">
+    <value>Add subject</value>
+  </data>
+  <data name="AddSubjects" xml:space="preserve">
+    <value>Add subjects</value>
+  </data>
+  <data name="AddTeacher" xml:space="preserve">
+    <value>Add teacher</value>
+  </data>
+  <data name="AdminOptions" xml:space="preserve">
+    <value>Admin options</value>
+  </data>
+  <data name="AllowExam" xml:space="preserve">
+    <value>Allow exam</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>An error occurred while processing your request.</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="Are you sure you want to delete this classroom" xml:space="preserve">
+    <value>Are you sure you want to delete this classroom</value>
+  </data>
+  <data name="Are you sure you want to delete this subject" xml:space="preserve">
+    <value>Are you sure you want to delete this subject</value>
+  </data>
+  <data name="Are you sure you want to promote all classrooms" xml:space="preserve">
+    <value>Are you sure you want to promote all classrooms</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Assign</value>
+  </data>
+  <data name="AssignedPupils" xml:space="preserve">
+    <value>Assigned pupils</value>
+  </data>
+  <data name="Assignments" xml:space="preserve">
+    <value>Assignments</value>
+  </data>
+  <data name="AssignPupils" xml:space="preserve">
+    <value>Assign pupils</value>
+  </data>
+  <data name="AssignSubjects" xml:space="preserve">
+    <value>Assign subjects</value>
+  </data>
+  <data name="Authenticator app" xml:space="preserve">
+    <value>Authenticator app</value>
+  </data>
+  <data name="AvailableSubjects" xml:space="preserve">
+    <value>Available subjects</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="before you can log in with a recovery code" xml:space="preserve">
+    <value>before you can log in with a recovery code</value>
+  </data>
+  <data name="CalculateFinalGrade" xml:space="preserve">
+    <value>Calculate final grade</value>
+  </data>
+  <data name="CalculateFinalGradeForSubject" xml:space="preserve">
+    <value>Calculate final grade for subject</value>
+  </data>
+  <data name="Change email" xml:space="preserve">
+    <value>Change email</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Change your account settings</value>
+  </data>
+  <data name="Classroom" xml:space="preserve">
+    <value>Classroom</value>
+  </data>
+  <data name="click here to log in" xml:space="preserve">
+    <value>click here to log in</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="Configure authenticator app" xml:space="preserve">
+    <value>Configure authenticator app</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="Confirm email" xml:space="preserve">
+    <value>Confirm email</value>
+  </data>
+  <data name="Confirmation link to change email sent. Please check your email." xml:space="preserve">
+    <value>Confirmation link to change email sent. Please check your email.</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Content</value>
+  </data>
+  <data name="ContentErrorMessage" xml:space="preserve">
+    <value>The content must have between 10 and 200 chars</value>
+  </data>
+  <data name="CreateAnAccount" xml:space="preserve">
+    <value>Create an account</value>
+  </data>
+  <data name="CreateMessage" xml:space="preserve">
+    <value>Create message</value>
+  </data>
+  <data name="Current role:" xml:space="preserve">
+    <value>Current role:</value>
+  </data>
+  <data name="Current subject:" xml:space="preserve">
+    <value>Current subject:</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>Delete user</value>
+  </data>
+  <data name="DeleteYearStructure" xml:space="preserve">
+    <value>Delete year structure</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered" xml:space="preserve">
+    <value>Deleting this data will permanently remove your account, and this cannot be recovered</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="Disable two-factor authentication" xml:space="preserve">
+    <value>Disable two-factor authentication</value>
+  </data>
+  <data name="Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should" xml:space="preserve">
+    <value>Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should</value>
+  </data>
+  <data name="DisplayClassrooms" xml:space="preserve">
+    <value>Display classrooms</value>
+  </data>
+  <data name="DisplayMyKidsScholarSituation" xml:space="preserve">
+    <value>Display my kids scholar situation</value>
+  </data>
+  <data name="DisplayMyScholarInformation" xml:space="preserve">
+    <value>Display my scholar information</value>
+  </data>
+  <data name="DisplayParents" xml:space="preserve">
+    <value>Display parents</value>
+  </data>
+  <data name="DisplayPupils" xml:space="preserve">
+    <value>Display pupil</value>
+  </data>
+  <data name="DisplayRoles" xml:space="preserve">
+    <value>Display roles</value>
+  </data>
+  <data name="DisplaySchoolDetails" xml:space="preserve">
+    <value>Display school details</value>
+  </data>
+  <data name="DisplaySpecializations" xml:space="preserve">
+    <value>Display specializations</value>
+  </data>
+  <data name="DisplaySubjects" xml:space="preserve">
+    <value>Display subjects</value>
+  </data>
+  <data name="DisplayTeachers" xml:space="preserve">
+    <value>Display teachers</value>
+  </data>
+  <data name="DisplayYearStructures" xml:space="preserve">
+    <value>Display year structures</value>
+  </data>
+  <data name="Don't have access to your authenticator device? You can" xml:space="preserve">
+    <value>Don't have access to your authenticator device? You can</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="Download a two-factor authenticator app like" xml:space="preserve">
+    <value>Download a two-factor authenticator app like</value>
+  </data>
+  <data name="DownloadFile" xml:space="preserve">
+    <value>Download file</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EditAssignment" xml:space="preserve">
+    <value>Edit assignment</value>
+  </data>
+  <data name="EditClassroom" xml:space="preserve">
+    <value>Edit classroom</value>
+  </data>
+  <data name="EditGrade" xml:space="preserve">
+    <value>Edit grade</value>
+  </data>
+  <data name="EditPupil" xml:space="preserve">
+    <value>Edit pupil</value>
+  </data>
+  <data name="EditTeacher" xml:space="preserve">
+    <value>Edit teacher</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EndingDate" xml:space="preserve">
+    <value>Ending date</value>
+  </data>
+  <data name="EndingYear" xml:space="preserve">
+    <value>Ending year</value>
+  </data>
+  <data name="Enter your email" xml:space="preserve">
+    <value>Enter your email</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="Error confirming your email." xml:space="preserve">
+    <value>Error confirming your email.</value>
+  </data>
+  <data name="ExamGrade" xml:space="preserve">
+    <value>Exam grade</value>
+  </data>
+  <data name="Failed to send the message!" xml:space="preserve">
+    <value>Failed to send the message!</value>
+  </data>
+  <data name="FinalGrade" xml:space="preserve">
+    <value>Final grade</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="for" xml:space="preserve">
+    <value>for</value>
+  </data>
+  <data name="Forget this browser" xml:space="preserve">
+    <value>Forget this browser</value>
+  </data>
+  <data name="Forgot password confirmation" xml:space="preserve">
+    <value>Forgot password confirmation</value>
+  </data>
+  <data name="Forgot your password" xml:space="preserve">
+    <value>Forgot your password</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Full name</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gender</value>
+  </data>
+  <data name="Generate (2FA) recovery codes" xml:space="preserve">
+    <value>Generate (2FA) recovery codes</value>
+  </data>
+  <data name="generate a new set of recovery codes" xml:space="preserve">
+    <value>generate a new set of recovery codes</value>
+  </data>
+  <data name="Generate two-factor authentication (2FA) recovery codes" xml:space="preserve">
+    <value>Generate two-factor authentication (2FA) recovery codes</value>
+  </data>
+  <data name="Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should" xml:space="preserve">
+    <value>Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="GradeClassroom" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="Grades" xml:space="preserve">
+    <value>Grades</value>
+  </data>
+  <data name="GradeType" xml:space="preserve">
+    <value>Grade type</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Group</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="If you do not complete your authenticator app configuration you may lose access to your account." xml:space="preserve">
+    <value>If you do not complete your authenticator app configuration you may lose access to your account.</value>
+  </data>
+  <data name="If you lose your device and don't have the recovery codes you will lose access to your account." xml:space="preserve">
+    <value>If you lose your device and don't have the recovery codes you will lose access to your account.</value>
+  </data>
+  <data name="If you reset your authenticator key your authenticator app will not work until you reconfigure it." xml:space="preserve">
+    <value>If you reset your authenticator key your authenticator app will not work until you reconfigure it.</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="into your two factor authenticator app. Spaces and casing do not matter." xml:space="preserve">
+    <value>into your two factor authenticator app. Spaces and casing do not matter.</value>
+  </data>
+  <data name="Invalid authenticator code." xml:space="preserve">
+    <value>Invalid authenticator code.</value>
+  </data>
+  <data name="Invalid login attempt." xml:space="preserve">
+    <value>Invalid login attempt.</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Is active</value>
+  </data>
+  <data name="IsPrincipal" xml:space="preserve">
+    <value>Is principal</value>
+  </data>
+  <data name="Justified" xml:space="preserve">
+    <value>Justified</value>
+  </data>
+  <data name="JustifyAbsence" xml:space="preserve">
+    <value>Justify absence</value>
+  </data>
+  <data name="JustifyAbsences" xml:space="preserve">
+    <value>Justify absences</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="Log in" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="log in with a recovery code" xml:space="preserve">
+    <value>log in with a recovery code</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Manage Email" xml:space="preserve">
+    <value>Manage Email</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Manage your account</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Message send!" xml:space="preserve">
+    <value>Message send!</value>
+  </data>
+  <data name="MessageDetails" xml:space="preserve">
+    <value>Message details</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="MessagesRegarding" xml:space="preserve">
+    <value>Messages regarding</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="New parent account" xml:space="preserve">
+    <value>New parent account</value>
+  </data>
+  <data name="New teacher account" xml:space="preserve">
+    <value>New teacher account</value>
+  </data>
+  <data name="NewEmail" xml:space="preserve">
+    <value>New email</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="No school registered yet!" xml:space="preserve">
+    <value>No school registered yet!</value>
+  </data>
+  <data name="No values were added!" xml:space="preserve">
+    <value>No values were added!</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Old password</value>
+  </data>
+  <data name="Once you have scanned the QR code or input the key above, your two factor authentication app will provide you with a unique code. Enter the code in the confirmation box below." xml:space="preserve">
+    <value>Once you have scanned the QR code or input the key above, your two factor authentication app will provide you with a unique code. Enter the code in the confirmation box below.</value>
+  </data>
+  <data name="OnlineCatalog" xml:space="preserve">
+    <value>Online catalog</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>or</value>
+  </data>
+  <data name="Parent" xml:space="preserve">
+    <value>Parent</value>
+  </data>
+  <data name="ParentOptions" xml:space="preserve">
+    <value>Parent options</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="PeriodTitle" xml:space="preserve">
+    <value>Period title</value>
+  </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Personal data</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
+  <data name="Please check your email to reset your password." xml:space="preserve">
+    <value>Please check your email to reset your password.</value>
+  </data>
+  <data name="Please enter a value for this field!" xml:space="preserve">
+    <value>Please enter a value for this field!</value>
+  </data>
+  <data name="Please select a file!" xml:space="preserve">
+    <value>Please select a file!</value>
+  </data>
+  <data name="PrincipalOptions" xml:space="preserve">
+    <value>Principal options</value>
+  </data>
+  <data name="Privacy and cookie policy have not been accepted" xml:space="preserve">
+    <value>Privacy and cookie policy have not been accepted</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="PromoteClassrooms" xml:space="preserve">
+    <value>Promote classrooms</value>
+  </data>
+  <data name="Pupil" xml:space="preserve">
+    <value>Pupil</value>
+  </data>
+  <data name="Pupil's full name" xml:space="preserve">
+    <value>Pupil's full name</value>
+  </data>
+  <data name="PupilOptions" xml:space="preserve">
+    <value>Pupil options</value>
+  </data>
+  <data name="Pupils" xml:space="preserve">
+    <value>Pupils</value>
+  </data>
+  <data name="PupilsOfThisClassroom" xml:space="preserve">
+    <value>Pupils of this classroom</value>
+  </data>
+  <data name="Put these codes in a safe place." xml:space="preserve">
+    <value>Put these codes in a safe place.</value>
+  </data>
+  <data name="ReadMessages" xml:space="preserve">
+    <value>Read messages</value>
+  </data>
+  <data name="Recovery codes" xml:space="preserve">
+    <value>Recovery codes</value>
+  </data>
+  <data name="recovery codes left" xml:space="preserve">
+    <value>recovery codes left</value>
+  </data>
+  <data name="Regarding" xml:space="preserve">
+    <value>Regarding</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterANewSchool" xml:space="preserve">
+    <value>Register a new school</value>
+  </data>
+  <data name="RegisterSchool" xml:space="preserve">
+    <value>Register school</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="RemoveKidFromList" xml:space="preserve">
+    <value>Remove kid from list</value>
+  </data>
+  <data name="RemoveSubjectFromList" xml:space="preserve">
+    <value>Remove subject from list</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>Resend</value>
+  </data>
+  <data name="Resend email confirmation" xml:space="preserve">
+    <value>Resend email confirmation</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="Reset authenticator app" xml:space="preserve">
+    <value>Reset authenticator app</value>
+  </data>
+  <data name="Reset authenticator key" xml:space="preserve">
+    <value>Reset authenticator key</value>
+  </data>
+  <data name="Reset Password" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="Reset password confirmation" xml:space="preserve">
+    <value>Reset password confirmation</value>
+  </data>
+  <data name="Reset recovery codes" xml:space="preserve">
+    <value>Reset recovery codes</value>
+  </data>
+  <data name="reset your authenticator keys" xml:space="preserve">
+    <value>reset your authenticator keys</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Save changes</value>
+  </data>
+  <data name="Scan the QR Code or enter this key" xml:space="preserve">
+    <value>Scan the QR Code or enter this key</value>
+  </data>
+  <data name="SchoolDetails" xml:space="preserve">
+    <value>School details</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>Score</value>
+  </data>
+  <data name="Select a classroom" xml:space="preserve">
+    <value>Select a classroom</value>
+  </data>
+  <data name="Select a role" xml:space="preserve">
+    <value>Select a role</value>
+  </data>
+  <data name="Select a subject" xml:space="preserve">
+    <value>Select a subject</value>
+  </data>
+  <data name="SelectedPupil" xml:space="preserve">
+    <value>Selected pupil</value>
+  </data>
+  <data name="SelectGender" xml:space="preserve">
+    <value>Select gender</value>
+  </data>
+  <data name="SelectPhoto" xml:space="preserve">
+    <value>Select photo</value>
+  </data>
+  <data name="Send verification email" xml:space="preserve">
+    <value>Send verification email</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Send message</value>
+  </data>
+  <data name="Set up authenticator app" xml:space="preserve">
+    <value>Set up authenticator app</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>Starting date</value>
+  </data>
+  <data name="StartingYear" xml:space="preserve">
+    <value>Starting year</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="SubjectHours" xml:space="preserve">
+    <value>Subject hours per week</value>
+  </data>
+  <data name="Subjects" xml:space="preserve">
+    <value>Subjects</value>
+  </data>
+  <data name="Teacher's full name" xml:space="preserve">
+    <value>Teacher's full name</value>
+  </data>
+  <data name="TeacherDetails" xml:space="preserve">
+    <value>Teacher details</value>
+  </data>
+  <data name="TeacherOptions" xml:space="preserve">
+    <value>Teacher options</value>
+  </data>
+  <data name="Teachers" xml:space="preserve">
+    <value>Teachers</value>
+  </data>
+  <data name="Thank you for confirming your email." xml:space="preserve">
+    <value>Thank you for confirming your email.</value>
+  </data>
+  <data name="The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code." xml:space="preserve">
+    <value>The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code.</value>
+  </data>
+  <data name="The password and confirmation password do not match." xml:space="preserve">
+    <value>The password and confirmation password do not match.</value>
+  </data>
+  <data name="The password is randomly generated!" xml:space="preserve">
+    <value>The password is randomly generated!</value>
+  </data>
+  <data name="The type of the selected score does not match the type of the existing grades!" xml:space="preserve">
+    <value>The type of the selected score does not match the type of the existing grades!</value>
+  </data>
+  <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
+    <value>The {0} must be at least {2} and at max {1} characters long.</value>
+  </data>
+  <data name="TheSubjectsOfTheClass" xml:space="preserve">
+    <value>The subjects of the classroom</value>
+  </data>
+  <data name="This action only disables" xml:space="preserve">
+    <value>This action only disables</value>
+  </data>
+  <data name="This process disables 2FA until you verify your authenticator app." xml:space="preserve">
+    <value>This process disables 2FA until you verify your authenticator app.</value>
+  </data>
+  <data name="This pupil has no grades!" xml:space="preserve">
+    <value>This pupil has no grades!</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
+  <data name="To use an authenticator app go through the following steps" xml:space="preserve">
+    <value>To use an authenticator app go through the following steps</value>
+  </data>
+  <data name="Towards" xml:space="preserve">
+    <value>Towards</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Two-factor authentication</value>
+  </data>
+  <data name="UnasignedPupils" xml:space="preserve">
+    <value>Unasigned pupils</value>
+  </data>
+  <data name="Unjustified" xml:space="preserve">
+    <value>Unjustified</value>
+  </data>
+  <data name="UnreadMessages" xml:space="preserve">
+    <value>Unread messages</value>
+  </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Update password</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="Verification Code" xml:space="preserve">
+    <value>Verification Code</value>
+  </data>
+  <data name="Verification email sent. Please check your email." xml:space="preserve">
+    <value>Verification email sent. Please check your email.</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="ViewAssignedPupils" xml:space="preserve">
+    <value>View assigned pupils</value>
+  </data>
+  <data name="ViewAssignedSubjects" xml:space="preserve">
+    <value>View assigned subjects</value>
+  </data>
+  <data name="ViewMessages" xml:space="preserve">
+    <value>View messages</value>
+  </data>
+  <data name="ViewPupils" xml:space="preserve">
+    <value>View pupils</value>
+  </data>
+  <data name="ViewTeachers" xml:space="preserve">
+    <value>View teachers</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="YearOfTheStructure" xml:space="preserve">
+    <value>Year of the structure</value>
+  </data>
+  <data name="YearStructures" xml:space="preserve">
+    <value>Years structures</value>
+  </data>
+  <data name="You can" xml:space="preserve">
+    <value>You can</value>
+  </data>
+  <data name="You cannot calculate the final grade because this subject has no grades!" xml:space="preserve">
+    <value>You cannot calculate the final grade because this subject has no grades!</value>
+  </data>
+  <data name="You have" xml:space="preserve">
+    <value>You have</value>
+  </data>
+  <data name="You have 1 recovery code left" xml:space="preserve">
+    <value>You have 1 recovery code left</value>
+  </data>
+  <data name="You have generated new recovery codes." xml:space="preserve">
+    <value>You have generated new recovery codes.</value>
+  </data>
+  <data name="You have no recovery codes left" xml:space="preserve">
+    <value>You have no recovery codes left</value>
+  </data>
+  <data name="You must" xml:space="preserve">
+    <value>You must</value>
+  </data>
+  <data name="You must accept the policy before you can enable two factor authentication" xml:space="preserve">
+    <value>You must accept the policy before you can enable two factor authentication</value>
+  </data>
+  <data name="You should" xml:space="preserve">
+    <value>You should</value>
+  </data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data" xml:space="preserve">
+    <value>Your account contains personal data that you have given us. This page allows you to download or delete that data</value>
+  </data>
+  <data name="Your authenticator app key has been reset, you will need to configure your authenticator app using the new key." xml:space="preserve">
+    <value>Your authenticator app key has been reset, you will need to configure your authenticator app using the new key.</value>
+  </data>
+  <data name="Your email is unchanged." xml:space="preserve">
+    <value>Your email is unchanged.</value>
+  </data>
+  <data name="Your login is protected with an authenticator app. Enter your authenticator code below" xml:space="preserve">
+    <value>Your login is protected with an authenticator app. Enter your authenticator code below</value>
+  </data>
+  <data name="Your password has been changed." xml:space="preserve">
+    <value>Your password has been changed.</value>
+  </data>
+  <data name="Your password has been reset. Please" xml:space="preserve">
+    <value>Your password has been reset. Please</value>
+  </data>
+</root>

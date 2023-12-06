@@ -1,0 +1,42 @@
+﻿@model List<YearStructure>
+
+
+@{
+    ViewData["Name"] = @Localizer["YearStructures"];
+}
+
+<div class="my-4 tableButton">
+    <a class="btn" asp-area="" asp-controller="YearStructure" asp-action="Create"><i class="fa-solid fa-plus"></i> @Localizer["AddANewYearStructure"]</a>
+</div>
+
+<div class="container mt-2">
+
+    <div class="row tableTitle">
+        <div class="col-7">
+            <h3>@Localizer["YearOfTheStructure"]</h3>
+        </div>
+        <div class="col-3">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var yearStructure in @Model)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col-7">
+               @Localizer["StartingYear"]: @yearStructure.StartingYear.Day  @DateTimeFormatInfo.CurrentInfo.GetMonthName(@yearStructure.StartingYear.Month) @yearStructure.StartingYear.Year 
+                - @Localizer["EndingYear"]: @yearStructure.EndingYear.Day @DateTimeFormatInfo.CurrentInfo.GetMonthName(@yearStructure.EndingYear.Month) @yearStructure.EndingYear.Year
+            </div>
+
+            <div class="col-3 tableButton">
+                <a class="btn d-inline-block" asp-action="Edit" asp-controller="YearStructure"
+                   asp-route-id="@yearStructure.YearStructureId"><i class="fa-solid fa-pen-to-square"></i> @Localizer["Edit"]</a>
+
+                <a class="btn d-inline-block" asp-action="Delete" asp-controller="YearStructure"
+                   asp-route-id="@yearStructure.YearStructureId"><i class="fa-solid fa-trash"></i> @Localizer["Delete"]</a>
+
+            </div>
+        </div>
+    }
+</div>

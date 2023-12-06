@@ -1,0 +1,59 @@
+﻿@model GradeViewModel
+
+
+<div class="container">
+
+    <h3 class="my-4 genericPageTitleText">@Localizer["Pupil"]: @Model.PupilFullName</h3>
+
+    <div class="row tableTitle">
+        <div class="col-3">
+            <h3>@Localizer["Subjects"]</h3>
+        </div>
+        <div class="col-3">
+            <h3>@Localizer["Grades"]</h3>
+        </div>
+        <div class="col-4 @ViewData["IsVisible"]">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var subjectName in @Model.AvailableSubjects)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col-3">
+                @subjectName
+            </div>
+
+            <div class="col-3">
+                <div class="dropdown smallDropdown">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="dropdown">@Localizer["Grades"]</a>
+                    <div class="dropdown-menu insideSmallDropdown">
+                        @Html.Raw(string.Join(" ", @Model.Grades.Where(g => g.Subject.Name == subjectName)
+                    .Select(g => $"<label class='ml-3'>{@Localizer["Grade"]}: {g.Score} {@Localizer["Date"]}: " +
+                    $"{string.Join(" ", g.Date.Day, DateTimeFormatInfo.CurrentInfo.GetMonthName(g.Date.Month), g.Date.Year)}</label>")))
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 tableButton">
+                <div class="d-flex align-items-center justify-content-center">
+                    @if (@subjectName != "Purtare")
+                    {
+                        <a class="btn @ViewData["IsVisible"]" asp-action="AddGrade" asp-controller="Grade"
+                   asp-route-pupilId="@Model.PupilId" asp-route-subject="@subjectName"><i class="bi bi-pencil-square"></i>@Localizer["AddGrade"]</a>
+
+                        <a class="btn ms-2 @ViewData["IsVisible"]" asp-action="CalculateFinalGrade" asp-controller="Grade" asp-route-pupilId="@Model.PupilId"
+                   asp-route-subjectName=@subjectName asp-route-teacherId="@Model.TeacherId">@Localizer["CalculateFinalGrade"]</a>
+                    }
+                    else
+                    {
+                        <a class="btn @ViewData["IsVisible"]" asp-action="Edit" asp-controller="Grade"
+                   asp-route-pupilId="@Model.PupilId" asp-route-subject="@subjectName"><i class="bi bi-pencil-square"></i>@Localizer["EditGrade"]</a>
+                    }
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

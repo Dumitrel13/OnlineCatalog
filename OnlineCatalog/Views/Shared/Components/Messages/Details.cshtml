@@ -1,0 +1,45 @@
+﻿@model AddMessageViewModel
+
+
+<h3 class="my-4 genericPageTitleText">
+    @Localizer["Details"]
+</h3>
+<div class="row">
+
+    <div class="col-6">
+        <div class="row g-2">
+
+            <div class="form-group inputStyle">
+                <input asp-for="@Model.Message.Title" readonly/>
+                <label>@Localizer["Title"]</label>
+            </div>
+
+            <div class="form-group mt-0 textareaStyle">
+                <label>@Localizer["Content"]</label>
+                <textarea asp-for="@Model.Message.Content" readonly></textarea>
+            </div>
+
+            <div class="form-group mt-3 inputStyle">
+                <input asp-for="FormattedDate" readonly />
+                <label>@Localizer["Date"]</label>
+            </div>
+
+            <div class="form-group inputStyle">
+                <input asp-for="TeacherFullName" readonly />
+                <label>@Localizer["Teacher's full name"]</label>
+            </div>
+
+            <div class="form-group inputStyle">
+                <input asp-for="PupilFullName" readonly />
+                <label>@Localizer["Pupil's full name"]</label>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="col-6 tableButton @ViewData["IsBtnVisible"]">
+        <a href="@Url.Action("DownloadFile", "Message", new { bucketName = "onlinecatalogstorage",
+                     key = @Model.Message.ImagePath })" class="btn btn-primary">@Localizer["DownloadFile"]</a>
+
+    </div>
+</div>

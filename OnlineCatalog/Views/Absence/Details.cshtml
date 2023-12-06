@@ -1,0 +1,76 @@
+﻿@model AbsenceViewModel
+
+<div class="container">
+
+    <h3 class="my-4 genericPageTitleText">@Localizer["SelectedPupil"]: @Model.PupilFullName</h3>
+
+    <div class="row tableTitle">
+        <div class="col">
+            <h3>@Localizer["Date"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Interval"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["State"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var absence in @Model.Absences)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col">
+                @absence.Date.Day
+                @DateTimeFormatInfo.CurrentInfo.GetMonthName(@absence.Date.Month) @absence.Date.Year
+            </div>
+
+            <div class="col">
+                @absence.StartingHour.ToString("hh\\:mm") - @absence.EndingHour.ToString("hh\\:mm")
+            </div>
+
+            <div class="col">
+                @if (@absence.IsJustified)
+                {
+                    <div>@Localizer["Justified"]</div>
+                }
+                else
+                {
+                    <div>@Localizer["Unjustified"]</div>
+                }
+            </div>
+
+            <div class="col tableButton">
+
+                @if (@Model.ClassMasterVisibility == "invisible"
+                     && !@absence.IsJustified
+                     && @DateTime.Now.TimeOfDay >= @absence.StartingHour && @DateTime.Now.TimeOfDay <= @absence.EndingHour
+                     && @absence.Date.Date == DateTime.Now.Date)
+                {
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a class="btn" asp-action="Justify" asp-controller="Absence" asp-route-pupilId="@Model.PupilId"
+                           asp-route-absenceId="@absence.AbsenceId">
+                            <i class="bi bi-pencil-square"></i>@Localizer["JustifyAbsence"]
+                        </a>
+
+                    </div>
+                }
+
+                @if (!@absence.IsJustified && @Model.ClassMasterVisibility == "visible")
+                {
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a class="btn" asp-action="Justify" asp-controller="Absence" asp-route-pupilId="@Model.PupilId"
+                           asp-route-absenceId="@absence.AbsenceId">
+                            <i class="bi bi-pencil-square"></i>@Localizer["JustifyAbsence"]
+                        </a>
+
+                    </div>
+                }
+            </div>
+
+        </div>
+    }
+</div>

@@ -1,0 +1,51 @@
+﻿@model TeacherAssignmentViewModel
+
+
+@{
+    ViewData["RoleDropdownMsg"] = @Localizer["Select a role"];
+    ViewData["SubjectDropdownMsg"] = @Localizer["Select a subject"];
+}
+
+<form asp-action="Add" asp-controller="TeacherAssignment" method="post" role="form">
+
+    <h3 class="my-5 genericPageTitleText">
+        @Localizer["Add a new assignment"]
+    </h3>
+    
+    <div class="mb-5">
+        @Html.ValidationSummary()
+    </div>
+    
+
+    @Html.HiddenFor(model => model.TeacherAssignment.ApplicationRole.Id)
+    @Html.HiddenFor(model => model.TeacherAssignment.Subject.SubjectId)
+    @Html.HiddenFor(model => model.TeacherAssignment.Teacher.Id)
+    @Html.HiddenFor(model => model.TeacherAssignment.Classroom.ClassId)
+    @Html.HiddenFor(model => model.TeacherAssignment.TeacherAssignmentId)
+
+    <div class="col-6">
+        <div class="row g-2">
+
+            <div class="col-5 inputStyle">
+                <input asp-for="@Model.TeachersFullName" type="text" readonly="" />
+                <label>@Localizer["Teacher's full name"]</label>
+            </div>
+
+            <div class="col-5">
+                <label class="labelStyle">@Localizer["Classroom"]</label>
+                @Html.DropDownListFor(m => m.SelectedClassroom, @Model.Classrooms,
+                @Localizer["Select a classroom"], new{@class="form-select"})
+            </div>
+
+            <partial name="_AssignmentAddEdit" for="@Model" view-data="ViewData"/>
+
+        </div>
+
+        <div class="mt-3">
+            <div class="col-md-5 buttons">
+                <button class="btn" type="submit"><i class="fa-solid fa-floppy-disk"></i> @Localizer["AddAssignment"]</button>
+            </div>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,72 @@
+﻿@model AbsenceViewModel
+
+
+<div class="container">
+
+    <h3 class="my-4 genericPageTitleText">@Localizer["Pupil"]: @Model.PupilFullName</h3>
+
+    <div class="row tableTitle">
+        <div class="col-3">
+            <h3>@Localizer["Subject"]</h3>
+        </div>
+        <div class="col-4">
+            <h3>@Localizer["Absences"]</h3>
+        </div>
+        <div class="col-3 @ViewData["IsVisible"]">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var subject in @Model.Subjects)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col-3">
+                @subject.Name
+            </div>
+
+            <div class="col-4">
+                <div class="dropdown smallDropdown">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="dropdown">@Localizer["Absences"]</a>
+                    <div class="dropdown-menu insideSmallDropdown">
+                        @foreach (var absence in @Model.Absences.Where(absence => absence.Subject.SubjectId == @subject.SubjectId))
+                        {
+                            <label@* class="dropdown-item disabled"*@>
+                                @Localizer["Date"]: @absence.Date.Day
+                                @DateTimeFormatInfo.CurrentInfo.GetMonthName(@absence.Date.Month) @absence.Date.Year
+
+                                @Localizer["Interval"]: @absence.StartingHour.ToString("hh\\:mm")-@absence.EndingHour.ToString("hh\\:mm")
+                                </label>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 tableButton">
+                <div class="d-flex align-items-center justify-content-center">
+
+                    @if (@Model.ClassMasterVisibility == "visible" && @Model.ClassMasterSubjects.Contains(@subject.Name))
+                    {
+                        <a class="btn @ViewData["IsVisible"]" asp-action="Add" asp-controller="Absence"
+                   asp-route-pupilId="@Model.PupilId" asp-route-subjectId="@subject.SubjectId">
+                            <i class="bi bi-pencil-square"></i>@Localizer["AddAbsence"]
+                        </a>
+                    }
+                    @if (@Model.ClassMasterVisibility == "invisible")
+                    {
+                        <a class="btn @ViewData["IsVisible"]" asp-action="Add" asp-controller="Absence"
+                   asp-route-pupilId="@Model.PupilId" asp-route-subjectId="@subject.SubjectId">
+                            <i class="bi bi-pencil-square"></i>@Localizer["AddAbsence"]
+                        </a>
+                    }
+
+                    <a class="btn ms-3 @ViewData["IsVisible"]" asp-action="Details" asp-controller="Absence"
+                   asp-route-pupilId="@Model.PupilId" asp-route-subjectId="@subject.SubjectId" asp-route-isClassMaster="@Model.ClassMasterVisibility">
+                        <i class="bi bi-pencil-square"></i>@Localizer["JustifyAbsences"]
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    }
+</div>

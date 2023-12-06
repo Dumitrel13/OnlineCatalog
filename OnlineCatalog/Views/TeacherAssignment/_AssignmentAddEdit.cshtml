@@ -1,0 +1,46 @@
+﻿@model TeacherAssignmentViewModel
+
+<div class="col-5">
+    <label class="labelStyle">@Localizer["Role"]</label>
+    @Html.DropDownListFor(m => m.SelectedRole, @Model.Roles,
+    @ViewData["RoleDropdownMsg"].ToString(), new{@class="form-select"})
+</div>
+
+<div class="col-5">
+    <label class="labelStyle">@Localizer["Subject"]</label>
+    @Html.DropDownListFor(m => m.SelectedSubject, @Model.Subjects,
+    @ViewData["SubjectDropdownMsg"].ToString(), new{@class="form-select"})
+</div>
+
+<div class="col-5 inputStyle mt-4">
+    <input asp-for="@Model.TeacherAssignment.SubjectHours" type="text" />
+    <label>@Localizer["SubjectHours"]</label>
+</div>
+
+<div class="mt-2 d-flex">
+    <div class="form-group inputStyle d-inline-block">
+        <input asp-for="@Model.TeacherAssignment.StartingDate" type="date" id="startingDate" min="@Model.YearStructure.StartingYear.ToString("yyyy-MM-dd")"
+               max="@Model.YearStructure.EndingYear.ToString("yyyy-MM-dd")" required=""
+               oninvalid="this.setCustomValidity('Please enter a value for this field!')"
+               oninput="setCustomValidity('')"
+               onchange="updateStartingDateMin()" />
+        <label>@Localizer["StartingDate"]</label>
+    </div>
+    <div class="form-group inputStyle d-inline-block">
+        <input asp-for="@Model.TeacherAssignment.EndingDate" type="date" id="endingDate" min="@Model.YearStructure.StartingYear.ToString("yyyy-MM-dd")"
+               max="@Model.YearStructure.EndingYear.ToString("yyyy-MM-dd")" required=""
+               oninvalid="this.setCustomValidity('Please enter a value for this field!')"
+               oninput="setCustomValidity('')" />
+        <label>@Localizer["EndingDate"]</label>
+    </div>
+</div>
+
+<script>
+    function updateStartingDateMin() {
+        var startingDate = document.getElementById("startingDate");
+        var endingDate = document.getElementById("endingDate");
+
+        endingDate.min = startingDate.value;
+
+    }
+</script>

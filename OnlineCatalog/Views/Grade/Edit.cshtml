@@ -1,0 +1,53 @@
+﻿@model AddGradeViewModel
+
+<form asp-action="Edit" asp-controller="Grade" method="post" role="form">
+    <h3 class="my-5 genericPageTitleText">
+        @Localizer["AddGrade"]
+    </h3>
+    <div class="col-6">
+        <div class="row g-2">
+
+            @Html.HiddenFor(model => model.Grade.Date)
+            @Html.HiddenFor(model => model.Grade.Pupil.Id)
+            @Html.HiddenFor(model => model.Grade.Teacher.Id)
+            @Html.HiddenFor(model => model.Grade.Subject.SubjectId)
+
+            <div class="form-group">
+
+                <label>@Localizer["Score"]</label>
+                <div class="dropdown">
+                    @Html.DropDownListFor(m => m.SelectedScore, Model.NumberScores,
+                    new { @class = "form-control dropdown-toggle", id = "score-dropdown", data_toggle = "dropdown" })
+
+                    
+                </div>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="FormattedDate" readonly="readonly" />
+                <label>@Localizer["Date"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="Grade.Subject.Name" readonly="readonly" />
+                <label>@Localizer["Subject"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="TeacherFullName" readonly="readonly" />
+                <label>@Localizer["Teacher's full name"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="PupilFullName" readonly="readonly" />
+                <label>@Localizer["Pupil's full name"]</label>
+            </div>
+        </div>
+        <div class="mt-3 buttonStyle">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" class="btn btn-secondary" value="@Localizer["EditGrade"]" />
+            </div>
+        </div>
+    </div>
+</form>
+

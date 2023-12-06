@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Classroom>
+
+@{
+    ViewData["Name"] = "Subjects";
+}
+
+<div class="my-4 tableButton">
+    <a class="btn" asp-area="" asp-controller="Classroom" asp-action="Add"><i class="fa-solid fa-plus"></i> @Localizer["AddClassroom"]</a>
+</div>
+
+<div class="container mt-2">
+
+    <div class="row tableTitle">
+        <div class="col">
+            <h3>@Localizer["Name"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+    
+
+    @foreach (var classroom in @Model)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col">
+                @classroom.Grade @classroom.Group
+            </div>
+
+            <div class="col tableButton">
+                <a class="btn d-inline-block" asp-action="Edit"
+               asp-route-classroomId="@classroom.ClassId"><i class="fa-solid fa-pen-to-square"></i> @Localizer["Edit"]</a>
+
+                <a class="btn" asp-action="AssignSubjects" asp-route-classroomId="@classroom.ClassId">@Localizer["AssignSubjects"]</a>
+                <a class="btn mt-1" asp-action="AssignPupils" asp-route-classroomId="@classroom.ClassId">@Localizer["AssignPupils"]</a>
+
+               @* <div class="dropdown d-inline-block">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i> @Localizer["Assign"] </a>
+                    <div class="dropdown-menu">
+                        <a class="btn" asp-action="AssignSubjects" asp-route-classroomId="@classroom.ClassId">@Localizer["AssignSubjects"]</a>
+                        <a class="btn mt-1" asp-action="AssignPupils" asp-route-classroomId="@classroom.ClassId">@Localizer["AssignPupils"]</a>
+                    </div>
+                </div>*@
+                
+                
+                @*<div class="dropdown d-inline-block w-50" style="background-color: transparent">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="dropdown"><i class="fa-solid fa-caret-down"></i> @Localizer["View"] </a>
+                    <div class="dropdown-menu">
+                        <a class="btn" asp-action="ViewAssignedSubjects" asp-route-classroomId="@classroom.ClassId">@Localizer["ViewAssignedSubjects"]</a>
+                        <a class="btn mt-1" asp-action="ViewAssignedPupils" asp-route-classroomId="@classroom.ClassId">@Localizer["ViewAssignedPupils"]</a>
+                    </div>
+                </div>*@
+
+                
+            </div>
+        </div>
+    }
+</div>

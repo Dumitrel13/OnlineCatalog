@@ -1,0 +1,45 @@
+﻿@page
+@model LoginWith2faModel
+@{
+    ViewData["Title"] = @Localizer["Two-factor authentication"];
+    ViewData["Name"] = @Localizer["Two-factor authentication"];
+}
+
+<div class="d-flex justify-content-center genericPageTitleText">
+    <h1>@ViewData["Title"]</h1>
+</div>
+
+<hr />
+<p class="d-flex justify-content-center tableText">@Localizer["Your login is protected with an authenticator app. Enter your authenticator code below"].</p>
+<div class="d-flex justify-content-center row">
+    <div class="col-md-4">
+        <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
+            <input asp-for="RememberMe" type="hidden" />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mt-5 inputStyle">
+                <input asp-for="Input.TwoFactorCode" type="text" required="" autocomplete="off" />
+                <label>@Localizer["Code"]</label>
+                <span asp-validation-for="Input.TwoFactorCode" class="text-danger"></span>
+            </div>
+            <div>
+                <div class="checkbox">
+                    <label asp-for="Input.RememberMachine" class="form-label">
+                        <input asp-for="Input.RememberMachine" />
+                        @Localizer["RememberMe"]!
+                    </label>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center my-2 buttons">
+                <button type="submit" class="btn">@Localizer["Login"]</button>
+            </div>
+        </form>
+    </div>
+</div>
+<p class="d-flex justify-content-center mt-3 tableText">
+    @Localizer["Don't have access to your authenticator device? You can"] 
+    <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl"> @Localizer["log in with a recovery code"]</a>.
+</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

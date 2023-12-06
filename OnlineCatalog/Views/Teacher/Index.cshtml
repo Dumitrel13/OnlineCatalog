@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Teacher>
+
+@{
+    ViewData["Name"] = @Localizer["Teachers"];
+}
+@if (ViewData["PrincipalVisibility"] == "invisible")
+{
+    <div class="tableButton my-3">
+        <a class="btn" asp-area="" asp-controller="Teacher" asp-action="Add"><i class="fa-solid fa-plus"></i> @Localizer["AddTeacher"]</a>
+    </div>
+}
+
+<div class="container mt-2">
+
+    <div class="row tableTitle">
+        <div class="col">
+            <h3>@Localizer["Name"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Email"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var teacher in Model)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col">
+                @teacher.FirstName @teacher.LastName
+            </div>
+
+            <div class="col">
+                @teacher.Email
+            </div>
+
+            <div class="col tableButton">
+
+                @if (ViewData["PrincipalVisibility"] == "invisible")
+                {
+                    <a class="btn btn-outline-primary" asp-action="Edit"
+               asp-route-teacherId="@teacher.Id"><i class="fa-solid fa-user-pen"></i> @Localizer["Edit"]</a>
+
+                    <a class="btn btn-danger text-white" asp-action="Delete"
+               asp-route-teacherId="@teacher.Id"><i class="fa-solid fa-trash"></i> @Localizer["Delete"]</a>
+
+                    <a class="btn btn-info text-white" asp-action="Details"
+               asp-route-teacherId="@teacher.Id"><i class="fa-solid fa-circle-info"></i> @Localizer["Details"]</a>
+
+                }
+                <a class="btn btn-info text-white @ViewData["PrincipalVisibility"]" asp-action="Index" asp-controller="TeacherAssignment"
+               asp-route-teacherId="@teacher.Id" asp-route-year="@DateTime.Now.Year"><i class="bi bg-info"></i>@Localizer["Assignments"]</a>
+            </div>
+        </div>
+    }
+</div>
+
+

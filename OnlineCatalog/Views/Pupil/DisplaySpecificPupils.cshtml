@@ -1,0 +1,54 @@
+﻿@model List<Pupil>
+
+@{
+    ViewData["Name"] = "Pupils";
+    var index = 0;
+}
+
+<div class="container mt-2">
+
+    <div class="row mb-4 tableTitle">
+        <div class="col-1">
+            <h3>#</h3>
+        </div>
+        <div class="col-4">
+            <h3>@Localizer["Name"]</h3>
+        </div>
+        <div class="col-4">
+            <h3>@Localizer["Email"]</h3>
+        </div>
+        <div class="col-3">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var pupil in @Model)
+    {
+        index++;
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col-1">
+                @index
+            </div>
+
+            <div class="col-4">
+                @pupil.FirstName @pupil.LastName
+            </div>
+
+            <div class="col-4">
+                @pupil.Email
+            </div>
+
+            <div class="col-3 tableButton">
+                <a class="btn" asp-controller="Grade" asp-action="@ViewData["GradeAction"]"
+               asp-route-pupilId="@pupil.Id"><i class="bi bg-light"></i>@Localizer["Grades"]</a>
+
+                <a class="btn" asp-controller="Absence" asp-action="@ViewData["AbsenceAction"]"
+               asp-route-pupilId="@pupil.Id"><i class="bi bg-light"></i>@Localizer["Absences"]</a>
+
+                <a class="btn @ViewData["IsMessagesVisible"]" asp-controller="Message" asp-action="@ViewData["MessageAction"]"
+               asp-route-pupilId="@pupil.Id"><i class="bi bi-pencil-square"></i>@Localizer[@ViewData["MessageText"] as string]</a>
+            </div>
+        </div>
+    }
+</div>

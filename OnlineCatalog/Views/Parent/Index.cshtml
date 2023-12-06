@@ -1,0 +1,51 @@
+﻿@model List<Parent>
+
+@{
+    ViewData["Name"] = @Localizer["DisplayParents"];
+}
+
+<div class="tableButton my-3">
+    <a class="btn" asp-controller="Parent" asp-action="Add"><i class="fa-solid fa-plus"></i> @Localizer["AddParent"]</a>
+</div>
+
+<div class="container">
+
+    <div class="row tableTitle">
+        <div class="col">
+            @Localizer["FullName"]
+        </div>
+        <div class="col">
+            @Localizer["Email"]
+        </div>
+        <div class="col">
+            @Localizer["Actions"]
+        </div>
+    </div>
+    
+
+    @foreach (var parent in @Model)
+    {
+        <div class="row mt-2 tableText">
+            <div class="col">
+                @parent.FirstName @parent.LastName
+            </div>
+            <div class="col">
+                @parent.Email
+            </div>
+            <div class="col tableButton">
+                <a class="btn" asp-action="Edit" asp-controller="Parent"
+               asp-route-parentId="@parent.Id"><i class="fa-solid fa-user-pen"></i> @Localizer["Edit"]</a>
+
+                <a class="btn" asp-action="Delete" asp-controller="Parent"
+               asp-route-parentId="@parent.Id"><i class="fa-solid fa-trash"></i> @Localizer["Delete"]</a>
+
+                <a class="btn" asp-action="Details" asp-controller="Parent"
+               asp-route-parentId="@parent.Id"><i class="fa-solid fa-circle-info"></i> @Localizer["Details"]</a>
+                
+                <a class="btn" asp-action="AssignKids" asp-controller="Parent"
+                   asp-route-parentId="@parent.Id">@Localizer["AssignPupils"]</a>
+            </div>
+        </div>
+    }
+
+</div>

@@ -1,0 +1,51 @@
+﻿@model MessageViewModel
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 col-sm-5 background">
+            <h3 class="my-5 genericPageTitleText">@Localizer["MessagesRegarding"] @Model.PupilFullName</h3>
+
+            <div class="row mb-5">
+               @* <div class="col genericPageTitleText">
+                    <h3>@Localizer["Messages"]</h3>
+                </div>*@
+
+               @foreach (var message in @Model.Messages)
+                {
+                    <div class="row mt-2 gx-0 messageTitle">
+
+                        <div class="col ms-4 message" messageId="@message.MessageId">
+                            @message.Title
+                        </div>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+        <div class="col-md-7 col-sm-7 message-details background" style="border: 1px solid black">
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('.message').click(function (event) {
+            event.stopPropagation();
+            var messageId = $(this).attr('messageId');
+
+            $.ajax({
+                url: rootUrl + '/Message/Details?messageId=' + messageId,
+                method: 'GET',
+                success: function (response) {
+                    $('.message-details').html(response);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+        //location.reload(false);
+    });
+</script>
+

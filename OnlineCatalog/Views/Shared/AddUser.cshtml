@@ -1,0 +1,44 @@
+﻿@model AddUserViewModel
+
+<form asp-action="@Model.ActionName" asp-controller="@Model.ControllerName" method="post" role="form">
+    <div class="genericPageTitleText">
+
+        @Localizer[@Model.Title]
+
+    </div>
+    
+    @Html.HiddenFor(model => model.Title)
+    @Html.HiddenFor(model => model.ButtonText)
+    @Html.HiddenFor(model => model.ActionName)
+    @Html.HiddenFor(model => model.User.Gender)
+    @Html.HiddenFor(model => model.User.Id)
+    
+    
+    <div class="col-6 mt-4">
+        <div class="mt-5 row">
+            <partial name="_AddAndEdit" for="User" view-data="ViewData"/>
+        </div>
+
+        <div class="dropdown mt-3 col-5 @Model.IsVisible">
+            <label>@Localizer["Gender"]</label>
+            @Html.DropDownListFor(m => m.SelectedGender, Model.GenderList,
+                new { @class = "form-select mt-2" })
+        </div>
+
+        <div class="col-8 mt-3 informative-text @Model.IsVisible">
+            <i class="fa-solid fa-circle-info"></i> @Localizer["The password is randomly generated!"]
+        </div>
+
+        <div class="mt-3 buttons @Model.IsVisible">
+            <button class="btn" type="submit">@Localizer[@Model.ButtonText]</button>
+        </div>
+
+        @if (!@Model.IsVisible.IsNullOrEmpty())
+        {
+            <div class="mt-3 informative-text">
+                @Localizer["Gender"]: @Model.User.Gender
+            </div>
+        }
+    </div>
+    
+</form>

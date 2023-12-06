@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Subject>
+
+@{
+    ViewData["Name"] = "Subjects";
+}
+<div class="my-3 tableButton">
+    <a class="btn" asp-area="" asp-controller="Subject" asp-action="Add">@Localizer["AddSubject"]</a>
+</div>
+
+<div class="container mt-2">
+
+	<div class="row tableTitle">
+		<div class="col">
+			<h3>@Localizer["Name"]</h3>
+		</div>
+		<div class="col">
+			<h3>@Localizer["Actions"]</h3>
+		</div>
+	</div>
+
+	@foreach (var subject in Model)
+	{
+		<div class="row mt-2 gx-0 tableText">
+
+			<div class="col">
+				@subject.Name
+			</div>
+
+			<div class="col tableButton">
+				<a class="btn" asp-action="Edit"
+			   asp-route-id="@subject.SubjectId"><i class="fa-solid fa-user-pen"></i> @Localizer["Edit"]</a>
+			
+				<a class="btn" asp-action="Delete"
+			   asp-route-id="@subject.SubjectId"><i class="fa-solid fa-trash"></i> @Localizer["Delete"]</a>
+			</div>
+		</div>
+	}
+</div>
+
+

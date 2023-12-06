@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Specialization>
+
+<a class="btn btn-outline-primary" asp-controller="Specialization" asp-action="AddAndEdit">@Localizer["AddSpecialization"]</a>
+
+<div class="container mt-2">
+
+	<div class="row">
+		<div class="col">
+			<h3>@Localizer["Name"]</h3>
+		</div>
+		<div class="col">
+			<h3>@Localizer["Actions"]</h3>
+		</div>
+	</div>
+
+	@foreach (var specialization in Model)
+	{
+		<div class="row mt-2">
+
+			<div class="col">
+				@specialization.Name
+			</div>
+
+			<div class="col">
+				<a class="btn btn-outline-primary" asp-action="AddAndEdit"
+			   asp-route-id="@specialization.SpecializationId"><i class="bi bi-pencil-square"></i>@Localizer["Edit"]</a>
+
+				<a class="btn btn-danger text-white" asp-action="Delete"
+			   asp-route-id="@specialization.SpecializationId"><i class="bi bi-trash"></i>@Localizer["Delete"]</a>
+			</div>
+		</div>
+	}
+</div>

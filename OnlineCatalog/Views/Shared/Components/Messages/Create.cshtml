@@ -1,0 +1,113 @@
+﻿@model AddMessageViewModel
+
+<form asp-action="Send" enctype="multipart/form-data" asp-controller="Message" method="post" role="form">
+    <div class="row background">
+
+
+        <div class="col-md-6">
+            <div class="row g-2">
+
+                @Html.HiddenFor(model => model.Message.Date)
+                @Html.HiddenFor(model => model.Message.Teacher.Id)
+                @Html.HiddenFor(model => model.Message.Pupil.Id)
+
+
+                <div class="form-group inputStyle">
+                    <input asp-for="TeacherFullName" readonly/>
+                    <label>@Localizer["Towards"]:</label>
+                </div>
+
+                <div class="form-group inputStyle">
+                    <input asp-for="PupilFullName" readonly/>
+                    <label>@Localizer["Regarding"]:</label>
+                </div>
+
+
+                <div class="form-group mt-4 inputStyle">
+                    <input asp-for="@Model.Message.Title" required 
+                           oninvalid="this.setCustomValidity('@Localizer["Please enter a value for this field!"]')"
+                           oninput="setCustomValidity('')"/>
+                    <label>@Localizer["Title"]</label>
+                    <span asp-validation-for="@Model.Message.Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-1 textareaStyle">
+                    <label>@Localizer["Content"]</label>
+                    <textarea asp-for="@Model.Message.Content"
+                              ></textarea>
+                    <span asp-validation-for="@Model.Message.Content" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mt-4 inputStyle">
+                    <input asp-for="FormattedDate" readonly />
+                    <label>@Localizer["Date"]</label>
+                </div>
+
+                @*<input type="file" id="imageData" name="Message.ImagePath" value="@Model.Message.ImagePath" />*@
+            </div>
+
+            <div class="mt-3">
+                <div class="col-md-offset-2 col-md-5 buttonStyle">
+                    <input type="submit" class="btn" value="@Localizer["SendMessage"]" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+
+            <input type="file" value="@Localizer["SelectPhoto"]" id="fileInput" asp-for="SelectedFile" required 
+                   oninvalid="this.setCustomValidity('@Localizer["Please select a file!"]')"
+                   oninput="setCustomValidity('')">
+            @*<div class="buttonStyle">
+                <input type="button"  onclick="document.getElementById('fileInput').click()"/>
+            </div>*@
+            
+
+            <div class="mt-3" id="imagePreview" asp-for="@Model.Message.ImagePath">
+            </div>
+
+        </div>
+    </div>
+</form>
+
+<script>
+    var fileInput = document.getElementById('fileInput');
+    //var hiddenInput = document.getElementById('imageData');
+
+    fileInput.onchange = function () {
+        var file = fileInput.files[0];
+        if (file) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var img = new Image();
+                img.onload = function () {
+                    var canvas = document.createElement('canvas');
+                    var width = img.width;
+                    var height = img.height;
+                    var max_size = 500; // max size of the image in pixels
+                    var aspect_ratio = width / height;
+
+                    if (width > height && width > max_size) {
+                        width = max_size;
+                        height = max_size / aspect_ratio;
+                    } else if (height > width && height > max_size) {
+                        height = max_size;
+                        width = max_size * aspect_ratio;
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0, width, height);
+                    var preview = document.getElementById("imagePreview");
+                    preview.innerHTML = "";
+                    preview.appendChild(canvas);
+                };
+                img.src = e.target.result;
+
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+</script>
+
+

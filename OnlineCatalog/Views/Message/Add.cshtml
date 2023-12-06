@@ -1,0 +1,51 @@
+﻿@model AddMessageViewModel
+
+<form asp-action="Add" asp-controller="Message" method="post" role="form">
+    <h3 class="my-4 genericPageTitleText">
+        @Localizer["Add a new message"]
+    </h3>
+
+    <div class="col-6">
+        <div class="row g-2">
+
+            @Html.HiddenFor(model => model.Message.Date)
+            @Html.HiddenFor(model => model.Message.Teacher.Id)
+            @Html.HiddenFor(model => model.Message.Pupil.Id)
+
+            <div class="form-group inputStyle">
+                <input asp-for="@Model.Message.Title" type="text" required/>
+                <label>@Localizer["Title"]</label>
+                <span asp-validation-for="@Model.Message.Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group textareaStyle">
+                <label>@Localizer["Content"]</label>
+                <textarea asp-for="@Model.Message.Content"></textarea>
+                <span asp-validation-for="@Model.Message.Content" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mt-4 inputStyle">
+                <input asp-for="FormattedDate" readonly />
+                <label>@Localizer["Date"]</label>
+            </div>
+
+            <div class="form-group inputStyle">
+                <input asp-for="TeacherFullName" readonly />
+                <label>@Localizer["Teacher's full name"]</label>
+            </div>
+
+            <div class="form-group inputStyle">
+                <input asp-for="PupilFullName" readonly />
+                <label>@Localizer["Pupil's full name"]</label>
+            </div>
+
+        </div>
+
+        <div class="mt-3">
+            <div class="col-md-offset-2 col-md-5 buttonStyle">
+                <input type="submit" class="btn" value="@Localizer["SendMessage"]" />
+            </div>
+        </div>
+    </div>
+
+</form>

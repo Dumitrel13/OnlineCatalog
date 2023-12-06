@@ -1,0 +1,15 @@
+﻿@model YearStructure
+
+<form asp-action="Delete" asp-controller="YearStructure" method="post" role="form">
+
+    @Html.HiddenFor(model => model.YearStructureId)
+
+    <div class="genericPageTitleText">
+        @Localizer["DeleteYearStructure"]: @Localizer["StartingYear"]: @Model.StartingYear.Day  @DateTimeFormatInfo.CurrentInfo.GetMonthName(@Model.StartingYear.Month) @Model.StartingYear.Year 
+        - @Localizer["EndingYear"]: @Model.EndingYear.Day @DateTimeFormatInfo.CurrentInfo.GetMonthName(@Model.EndingYear.Month) @Model.EndingYear.Year
+    </div>
+
+    <div class="mt-5 buttons">
+        <button class="btn">@Localizer["Confirm"]</button>
+    </div>
+</form>

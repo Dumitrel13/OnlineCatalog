@@ -1,0 +1,14 @@
+﻿@model Subject
+
+@{
+    ViewData["BtnText"] = @Localizer["AddSubject"];
+    ViewData["Name"] = @Localizer["AddSubject"];
+}
+<form asp-action="Add" method="post" role="form">
+	<h3 class="my-5 genericPageTitleText">
+        @Localizer["Add a new subject"]
+	</h3>
+    <partial name="_AddAndEdit" model="@Model" view-data="ViewData"/>
+    
+
+</form>

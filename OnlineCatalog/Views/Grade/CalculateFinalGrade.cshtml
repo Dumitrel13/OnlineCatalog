@@ -1,0 +1,57 @@
+﻿@model CalculateFinalGradeViewModel
+
+<form asp-action="CalculateFinalGrade" asp-controller="Grade" method="post" role="form">
+
+    <div class="genericPageTitleText">
+        @Localizer["CalculateFinalGradeForSubject"]: @Model.Subject.Name
+        <br />
+        @Localizer["Pupil"]: @Model.PupilFullName
+    </div>
+    
+    @Html.HiddenFor(model => model.Subject.SubjectId)
+    @Html.HiddenFor(model => model.PupilId)
+    @Html.HiddenFor(model => model.TeacherId)
+    
+    @Html.ValidationSummary()
+
+    <div class="mt-5">
+
+        <div class="row">
+
+            <div class="col-3">
+                <div class="dropdown smallDropdown">
+                    <a href="#" class="btn btn-secondary" data-bs-toggle="dropdown">@Localizer["Grades"]</a>
+                    <div class="dropdown-menu insideSmallDropdown">
+                        @Html.Raw(string.Join(" ", @Model.Grades
+                            .Select(g => $"<label class='ml-3'>{@Localizer["Grade"]}: {g.Score} {@Localizer["Date"]}: " +
+                                         $"{string.Join(" ", g.Date.Day, DateTimeFormatInfo.CurrentInfo.GetMonthName(g.Date.Month), g.Date.Year)}</label>")))
+                    </div>
+                </div>
+            </div>
+
+            @if (@Model.ExamGrade != null)
+            {
+                <div class="col-3 inputStyle">
+                    <input type="text" readonly="readonly" value="@Model.ExamGrade.Score" />
+                    <label>@Localizer["ExamGrade"]</label>
+                </div>
+            }
+
+        </div>
+        
+        @if (@Model.FinalGrade != null)
+        {
+            <div class="mt-5 col-3 inputStyle">
+                <input type="text" readonly="readonly" value="@Model.FinalGrade" />
+                <label>@Localizer["FinalGrade"]</label>
+
+            </div>
+        }
+
+        <div class="mt-5 buttons">
+            <button class="btn" type="submit" id="calculate-final-grade">@Localizer["CalculateFinalGrade"]</button>
+        </div>
+
+    </div>
+
+</form>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Pupil>
+
+@{
+    ViewData["Name"] = "Pupils";
+}
+<div class="tableButton">
+    <a class="btn" asp-area="" asp-controller="Pupil" asp-action="Add"><i class="fa-solid fa-plus"></i> @Localizer["AddPupil"]</a>
+</div>
+
+<div class="container mt-4">
+
+    <div class="row tableTitle">
+        <div class="col">
+            <h3>@Localizer["Name"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Email"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var pupil in Model)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col">
+                @pupil.FirstName @pupil.LastName
+            </div>
+
+            <div class="col">
+                @pupil.Email
+            </div>
+
+            <div class="col tableButton">
+                <a class="btn" asp-action="Edit"
+               asp-route-id="@pupil.Id"><i class="fa-solid fa-user-pen"></i> @Localizer["Edit"]</a>
+			
+                <a class="btn" asp-action="Delete"
+               asp-route-id="@pupil.Id"><i class="fa-solid fa-trash"></i> @Localizer["Delete"]</a>
+
+                <a class="btn" asp-action="Details"
+               asp-route-id="@pupil.Id"><i class="fa-solid fa-circle-info"></i> @Localizer["Details"]</a>
+            </div>
+        </div>
+    }
+</div>

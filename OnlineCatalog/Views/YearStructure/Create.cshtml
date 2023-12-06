@@ -1,0 +1,193 @@
+﻿@model YearStructure
+
+@{
+    ViewData["Name"] = @Localizer["AddANewYearStructure"];
+}
+
+<form asp-action="@ViewData["ActionName"]" asp-controller="YearStructure" method="post" role="form">
+    
+    @Html.HiddenFor(model => model.YearStructureId)
+
+    <div class="container mt-2">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-group invisible col searchBarStyle">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"/>
+                <button type="button" class="btn btn-outline-primary">search</button>
+            </div>
+            <div class="col buttons">
+                <button type="button" id="add-row"><i class="fa-solid fa-plus"></i> @Localizer["AddNewPeriod"]</button>
+                <button type="button" id="delete-row" style="width: 10%"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="submit" id="save-year-structure"><i class="fa-solid fa-floppy-disk"></i> @Localizer["SaveChanges"]</button>
+
+                <input type="hidden" name="periods" value=""/>
+            </div>
+        </div>
+    </div>
+
+    @Html.ValidationSummary()
+
+    <div class="mt-5 d-flex">
+        <div class="form-group inputStyle d-inline-block">
+            <input asp-for="StartingYear" type="date" placeholder="" name="StartingYear" required=""
+                   oninvalid="this.setCustomValidity('Please enter a value for this field!')"
+                   oninput="setCustomValidity('')"/>
+            <label>@Localizer["StartingYear"]</label>
+        </div>
+        <div class="form-group inputStyle d-inline-block">
+            <input asp-for="EndingYear" type="date" name="EndingYear" required=""
+                   oninvalid="this.setCustomValidity('Please enter a value for this field!')"
+                   oninput="setCustomValidity('')"/>
+            <label>@Localizer["EndingYear"]</label>
+        </div>
+        
+        <div class="form-group ms-5">
+            <input asp-for="AllowExam" type="checkbox" />
+            <label>@Localizer["AllowExam"]?</label>
+            <span asp-validation-for="AllowExam" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <div class="row tableTitle">
+            <div class="col-1">
+                <input type="checkbox" id="select-all"/>
+            </div>
+            <div class="col-1">
+                #
+            </div>
+            <div class="col">
+                @Localizer["PeriodTitle"]
+            </div>
+            <div class="col">
+                @Localizer["StartingDate"]
+            </div>
+            <div class="col">
+                @Localizer["EndingDate"]
+            </div>
+        </div>
+
+        <div class="row screenTable" id="table-body">
+        </div>
+    </div>
+</form>
+<script>
+    $(document).ready(function () {
+        var index = 1;
+
+        $('#select-all').click(function () {
+            $('input[type="checkbox"]').prop('checked', this.checked);
+        });
+
+        // Deselect the "check all" checkbox when any of the other checkboxes are unchecked
+        $('input[type="checkbox"]').click(function () {
+            if (!this.checked) {
+                $('#select-all').prop('checked', false);
+            }
+        });
+
+        $('#add-row').click(function () {
+            var newRow =
+                $('<div class="row mt-2">' +
+                    '<div class="col-1 mt-2"><input type="checkbox" name="select-row"/></div>' +
+                    '<div class="col-1 mt-2 index"></div>' +
+                    '<div class="col inputStyle"><input type="text" name="period-title" required></div>' +
+                    '<div class="col inputStyle"><input type="date" name="starting-date" required></div>' +
+                    '<div class="col inputStyle"><input type="date" name="ending-date" required></div>' +
+                    '</div>'
+                );
+
+            newRow.find('input[name="period-title"]').attr("oninvalid", "this.setCustomValidity('Adaugă o valoare pentru acest câmp!')")
+                .attr("oninput", "setCustomValidity('')");
+
+            newRow.find('input[name="starting-date"]').attr("oninvalid", "this.setCustomValidity('Adaugă o valoare pentru acest câmp!')")
+                .attr("oninput", "setCustomValidity('')")
+                .attr("min", $('input[name="StartingYear"]').val())
+                .attr("max", $('input[name="EndingYear"]').val());
+
+            newRow.find('input[name="ending-date"]').attr("oninvalid", "this.setCustomValidity('Adaugă o valoare pentru acest câmp!')")
+                .attr("oninput", "setCustomValidity('')")
+                .attr("min", $('input[name="StartingYear"]').val())
+                .attr("max", $('input[name="EndingYear"]').val());
+
+            var numberOfRows = $('#table-body .row').length;
+            newRow.find('.index').text(numberOfRows + 1);
+            $('#table-body').append(newRow);
+            index++;
+        });
+
+        $('#delete-row').click(function () {
+            $('input[name="select-row"]:checked').each(function () {
+                var row = $(this).closest('.row');
+                row.remove();
+            });
+            resetRowIndexes();
+        });
+
+        function resetRowIndexes() {
+            $('#table-body .row').each(function (index, row) {
+                $(row).find('.index').text(index + 1);
+            });
+        }
+
+        $('#save-year-structure').click(function () {
+            var periods = [];
+            $('#table-body .row').each(function (index, row) {
+                var $row = $(row);
+
+                var title = $row.find('input[name="period-title"]').val();
+                var start = $row.find('input[name="starting-date"]').val();
+                var end = $row.find('input[name="ending-date"]').val();
+                if (title || start || end) {
+                    var period = {
+                        title: title,
+                        start: start,
+                        end: end
+                    };
+                    periods.push(period);
+                }
+            });
+            console.log(periods);
+            $('input[name="periods"]').val(JSON.stringify(periods));
+        });
+
+
+
+        var periods = @Html.Raw(Json.Serialize(Model.Periods.ToArray()));
+        console.log(periods);
+        if (periods.length > 0) {
+            periods.forEach(function (period) {
+                var startDate = new Date(period.start).toISOString().split('T')[0]; // Convert start date to YYYY-MM-DD format
+                var endDate = new Date(period.end).toISOString().split('T')[0]; // Convert end date to YYYY-MM-DD format
+
+
+                var newRow =
+                    $('<div class="row mt-2">' +
+                        '<div class="col-1 mt-2"><input type="checkbox" name="select-row"/></div>' +
+                        '<div class="col-1 mt-2 index">' +
+                        index +
+                        '</div>' +
+                        '<div class="col inputStyle"><input type="text" name="period-title" required value="' +
+                        period.title +
+                        '"></div>' +
+                        '<div class="col inputStyle"><input type="date" name="starting-date" required value="' +
+                        startDate +
+                        '"></div>' +
+                        '<div class="col inputStyle"><input type="date" name="ending-date" required value="' +
+                        endDate +
+                        '"></div>' +
+                        '</div>'
+                    );
+
+                $('#table-body').append(newRow);
+                index++;
+            });
+        }
+
+    });
+
+</script>

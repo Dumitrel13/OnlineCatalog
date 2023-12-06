@@ -1,0 +1,578 @@
+﻿html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.background {
+    background-color: #f5f5f5;
+}
+
+.genericPageTitleText {
+    font-family: Century Gothic;
+    font-size: 30px;
+    color: #333333;
+}
+
+/* Navigation bar */
+.mainNavigation {
+    background-color: #f5f5f5;
+}
+
+.logo {
+    font-family: Century Gothic;
+    font-size: 30px;
+    font-weight: 700;
+    color: #333333;
+    text-transform: uppercase;
+    border-left: 5px solid #f0ad4e;
+    border-right: 5px solid #f0ad4e;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/*.navbar-toggler-icon {
+    color: #333333;
+}*/
+
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    font-family: Century Gothic;
+}
+
+/*Footer*/
+.footer {
+    background-color: #f5f5f5;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #999999;
+    font-size: 14px;
+}
+
+    .footer a {
+        color: #333333;
+    }
+
+        .footer a:hover {
+            color: #f0ad4e;
+        }
+
+/*Dropdown menus*/
+
+
+.menuLink a:focus:before {
+    content: "• ";
+    color: black;
+}
+
+.menuLink a:hover:before {
+    content: "• ";
+    color: black;
+}
+
+.dropdownOption {
+    font-family: Century Gothic;
+    font-size: 17px;
+    width: 100vw;
+    background-color: transparent;
+}
+
+    .dropdownOption a:hover:before {
+        content: "• ";
+        color: black;
+    }
+
+    .dropdownOption a:hover {
+        background-color: transparent;
+        backdrop-filter: blur(5px);
+        color: #f0ad4e;
+    }
+
+.dropdownMenu {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+}
+
+.dropdownItem {
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+/*Display specific pupils*/
+
+.tableTitle div {
+    font-family: Century Gothic;
+    font-size: 17px;
+    font-weight: bolder;
+    border: 1px solid #f0ad4e;
+    text-transform: full-width;
+}
+
+.tableText div {
+    font-family: Century Gothic;
+    font-size: 17px;
+}
+
+.tableButton a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f0ad4e;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+}
+
+    .tableButton a:hover {
+        background-color: #f0ad4e;
+        cursor: pointer;
+    }
+
+    .tableButton a:focus {
+        outline: none;
+    }
+
+    .tableButton a:active {
+        transform: translateY(2px);
+        box-shadow: none;
+    }
+
+/*Grade/Index*/
+
+.smallDropdown {
+    border: none;
+    border-radius: 0;
+}
+
+    .smallDropdown a {
+        color: #333333;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 12px 20px;
+        display: block;
+        white-space: nowrap;
+        background-color: #f5f5f5;
+    }
+
+        .smallDropdown a:hover {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .smallDropdown a:focus {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+.insideSmallDropdown {
+    background-color: #f5f5f5;
+}
+
+    .insideSmallDropdown label:hover {
+        background-color: #f0ad4e;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        justify-content: center;
+    }
+
+
+/*Input*/
+.inputStyle {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+    .inputStyle input[type="text"] {
+        border: none;
+        border-bottom: 2px solid #666;
+        padding: 10px;
+        width: 100%;
+        font-size: 18px;
+        color: #666;
+        background-color: transparent;
+        transition: border-bottom-color 0.3s ease-in-out;
+    }
+
+    .inputStyle input[type="password"] {
+        border: none;
+        border-bottom: 2px solid #666;
+        padding: 10px;
+        width: 100%;
+        font-size: 18px;
+        color: #666;
+        background-color: transparent;
+        transition: border-bottom-color 0.3s ease-in-out;
+    }
+
+    .inputStyle input[type="time"] {
+        border: none;
+        border-bottom: 2px solid #666;
+        padding: 10px;
+        width: 100%;
+        font-size: 18px;
+        color: #666;
+        background-color: transparent;
+        transition: border-bottom-color 0.3s ease-in-out;
+    }
+
+    .inputStyle input[type="date"] {
+        border: none;
+        border-bottom: 2px solid #666;
+        padding: 10px;
+        width: 100%;
+        font-size: 18px;
+        color: #666;
+        background-color: transparent;
+        transition: border-bottom-color 0.3s ease-in-out;
+    }
+
+    .inputStyle input[type="text"]:focus {
+        outline: none;
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="password"]:focus {
+        outline: none;
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="time"]:focus {
+        outline: none;
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="date"]:focus {
+        outline: none;
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="text"]:valid {
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="password"]:valid {
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="text"]:read-only {
+        border-bottom-color: #333333;
+    }
+
+    .inputStyle input[type="time"]:valid {
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="time"]:read-only {
+        border-bottom-color: #333333;
+    }
+
+    .inputStyle input[type="date"]:valid {
+        border-bottom-color: #f0ad4e;
+    }
+
+    .inputStyle input[type="date"]:read-only {
+        border-bottom-color: #333333;
+    }
+
+    .inputStyle label {
+        position: absolute;
+        left: 10px;
+        font-size: 18px;
+        color: #666;
+        pointer-events: none;
+        transition: top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+        top: 10px;
+    }
+
+    .inputStyle input[type="text"]:focus ~ label,
+    .inputStyle input[type="text"]:valid ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #f0ad4e;
+    }
+
+    .inputStyle input[type="text"]:read-only ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #333333;
+    }
+
+    .inputStyle input[type="password"]:focus ~ label,
+    .inputStyle input[type="password"]:valid ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #f0ad4e;
+    }
+
+    .inputStyle input[type="password"]:read-only ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #333333;
+    }
+
+    .inputStyle input[type="time"]:focus ~ label,
+    .inputStyle input[type="time"]:valid ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #f0ad4e;
+    }
+
+    .inputStyle input[type="time"]:read-only ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #333333;
+    }
+
+    .inputStyle input[type="date"]:focus ~ label,
+    .inputStyle input[type="date"]:valid ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #f0ad4e;
+    }
+
+    .inputStyle input[type="date"]:read-only ~ label {
+        top: -18px;
+        font-size: 14px;
+        color: #333333;
+    }
+
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: transparent;
+}
+
+input[type=date]:focus::-webkit-datetime-edit {
+    color: black !important;
+}
+
+/* Button with tag input*/
+
+.buttonStyle input {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f0ad4e;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+}
+
+    .buttonStyle input:hover {
+        background-color: #f0ad4e;
+        cursor: pointer;
+    }
+
+    .buttonStyle input:focus {
+        outline: none;
+    }
+
+    .buttonStyle input:active {
+        transform: translateY(2px);
+        box-shadow: none;
+    }
+
+/*Textarea*/
+
+.textareaStyle textarea {
+    outline-color: #f0ad4e;
+    width: 100%;
+}
+
+.textareaStyle label {
+    font-size: 14px;
+}
+
+.linkStyle a {
+    font-family: Century Gothic;
+    font-size: 20px;
+    color: #333333;
+}
+
+    .linkStyle a:hover {
+        font-family: Century Gothic;
+        font-size: 20px;
+        color: #f0ad4e;
+    }
+
+    .linkStyle a:focus {
+        font-family: Century Gothic;
+        font-size: 20px;
+        color: #f0ad4e;
+    }
+
+.messageTitle {
+    width: 60%;
+    color: #333333;
+    border: 1px solid #f0ad4e;
+}
+
+/*Buttons with tag button*/
+
+.buttons button {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f0ad4e;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s ease-in-out;
+    height: 100%;
+}
+
+    .buttons button:hover {
+        background-color: #f0ad4e;
+        cursor: pointer;
+    }
+
+    .buttons button:focus {
+        outline: none;
+    }
+
+    .buttons button:active {
+        transform: translateY(2px);
+        box-shadow: none;
+    }
+
+/*Validation messages*/
+
+.validation-summary-errors {
+    color: red;
+    font-weight: bold;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+/*Table on whole screen*/
+
+.screenTable {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+.fullScreenTable {
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+/*Item from dropdown*/
+.form-select {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    border: 2px solid black;
+    box-shadow: none;
+}
+
+    .form-select:focus {
+        border-color: #f0ad4e;
+        box-shadow: none;
+    }
+
+/*Label style*/
+
+.labelStyle {
+    font-size: 14px;
+    color: #f0ad4e;
+}
+
+/*Year filter*/
+.year-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.arrow-button {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    cursor: pointer;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+    .arrow-button[disabled] i {
+        opacity: 0.5;
+        color: #999999;
+    }
+
+
+.year-input {
+    background-color: transparent;
+    border: none;
+    color: #444;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    width: 60px;
+}
+
+/*Informative text*/
+.informative-text {
+    font-family: Century Gothic;
+    font-size: 20px;
+    color: #333333;
+}
+
+/*Dropdown generated using @Html*/
+
+.html-dropdown {
+}
+
+/*Multi select dropdown*/
+
+.select-wrapper select {
+    border: 2px solid black;
+    border-radius: 4px;
+}
+
+    .select-wrapper select:focus {
+        outline: 2px solid #f0ad4e;
+        border: none;
+    }
+
+    .select-wrapper select::-webkit-scrollbar {
+        width: 0.5em; /* Width of the scrollbar */
+    }
+
+    .select-wrapper select::-webkit-scrollbar-track {
+        background-color: #f1f1f1; /* Track color */
+    }
+
+    .select-wrapper select::-webkit-scrollbar-thumb {
+        background-color: #888; /* Thumb color */
+        border-radius: 5px; /* Rounded corners */
+    }
+
+        .select-wrapper select::-webkit-scrollbar-thumb:hover {
+            background-color: #555; /* Thumb color on hover */
+        }
+
+/*Checkbox style*/
+
+

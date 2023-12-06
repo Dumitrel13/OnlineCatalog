@@ -1,0 +1,23 @@
+﻿@model List<ComponentModel>
+
+<li class="nav-has-child menuLink @ViewData["IsHidden"]">
+    <a class="nav-link"
+       data-toggle="dropdown"
+       href="#"
+       role="button"
+       data-bs-toggle="dropdown"
+       id="nav-dropdown"
+       aria-expanded="false">
+        @ViewData["Title"]
+    </a>
+    <ul class="dropdown-menu dropdownMenu">
+        @foreach (var item in Model)
+        {
+            <li class="dropdownOption">
+                <a asp-controller="@item.ControllerName" asp-action="@item.Action" class="dropdown-item dropdownItem">
+                    @item.Name
+                </a>
+            </li>
+        }
+    </ul>
+</li>

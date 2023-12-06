@@ -1,0 +1,128 @@
+﻿@model AddGradeViewModel
+
+<form asp-action="AddGrade" asp-controller="Grade" method="post" role="form">
+    <h3 class="my-5 genericPageTitleText">
+        @Localizer["AddGrade"]
+    </h3>
+    
+    @Html.ValidationSummary()
+
+    <div class="col-6">
+        <div class="row g-2">
+
+            @Html.HiddenFor(model => model.Grade.Date)
+            @Html.HiddenFor(model => model.Grade.Pupil.Id)
+            @Html.HiddenFor(model => model.Grade.Teacher.Id)
+            @Html.HiddenFor(model => model.Grade.Subject.SubjectId)
+
+            @{
+                var dropdownMenuDiv = new TagBuilder("div");
+                dropdownMenuDiv.AddCssClass("dropdown-menu");
+                dropdownMenuDiv.MergeAttribute("aria-labelledby", "type-dropdown");
+
+                foreach (var element in Model.Types)
+                {
+                    var dropdownMenuItem = new TagBuilder("a");
+                    dropdownMenuItem.AddCssClass("dropdown-item");
+                    dropdownMenuItem.InnerHtml.Append(element.Text);
+                    dropdownMenuDiv.InnerHtml.AppendHtml(dropdownMenuItem);
+                }
+            }
+            <div class="form-group">
+                <label>@Localizer["GradeType"]</label>
+                <div class="dropdown">
+                    @Html.DropDownListFor(m => m.SelectedType, Model.Types,
+                    new {@class="form-control dropdown-toggle", id = "type-dropdown", data_toggle = "dropdown"})
+
+                    @dropdownMenuDiv
+                </div>
+            </div>
+
+            @{
+                var secondDropdownMenuDiv = new TagBuilder("div");
+                secondDropdownMenuDiv.AddCssClass("dropdown-menu");
+                secondDropdownMenuDiv.MergeAttribute("aria-labelledby", "type-dropdown");
+
+                foreach (var element in Model.Types)
+                {
+                    var dropdownMenuItem = new TagBuilder("a");
+                    dropdownMenuItem.AddCssClass("dropdown-item");
+                    dropdownMenuItem.InnerHtml.Append(element.Text);
+                    dropdownMenuDiv.InnerHtml.AppendHtml(dropdownMenuItem);
+                }
+            }
+
+            <div class="form-group">
+
+                <label>@Localizer["Score"]</label>
+                <div class="dropdown">
+                    @Html.DropDownListFor(m => m.SelectedScore, Model.NumberScores,
+                    new { @class = "form-control dropdown-toggle", id = "score-dropdown", data_toggle = "dropdown" })
+
+                    @secondDropdownMenuDiv
+                </div>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="FormattedDate" readonly="readonly" />
+                <label>@Localizer["Date"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="Grade.Subject.Name" readonly="readonly" />
+                <label>@Localizer["Subject"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="TeacherFullName" readonly="readonly" />
+                <label>@Localizer["Teacher's full name"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="PupilFullName" readonly="readonly" />
+                <label>@Localizer["Pupil's full name"]</label>
+            </div>
+        </div>
+        <div class="mt-3 buttonStyle">
+            <div class="col-md-offset-2 col-md-5">
+                <input type="submit" class="btn btn-secondary" value="@Localizer["AddGrade"]" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts {
+    <script type="text/javascript" language="javascript">
+
+        var modelData = {
+            numberScores: @Html.Raw(JsonConvert.SerializeObject(Model.NumberScores)),
+            characterScores: @Html.Raw(JsonConvert.SerializeObject(Model.CharacterScores))
+                            };
+        $(function () {
+            // Handle the change event of the first dropdown
+            $('#type-dropdown').on('change', function () {
+
+                // Get the selected text of the first dropdown
+                var selectedText = $(this).find('option:selected').text();
+
+                // Clear the menu
+                $('#score-dropdown').empty();
+
+                // Populate the menu based on the selected text
+                if (selectedText === 'Calificativ') {
+
+                    $.each(modelData.characterScores, function (index, element) {
+                        console.log('element', element.Text);
+                        $('#score-dropdown').append($('<option>').addClass('dropdown-item').attr('value', element.Value).text(element.Text));
+                    });
+                } else {
+                    $.each(modelData.numberScores, function (index, element) {
+                        $('#score-dropdown').append($('<option>').addClass('dropdown-item').attr('value', element.Value).text(element.Text));
+                    });
+                }
+            });
+        });
+    </script>
+}
+

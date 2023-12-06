@@ -1,0 +1,18 @@
+﻿@model JobPeriodRoles
+
+<div class="card border border-3 border-success" style="width: 30rem">
+    <div class="card-body">
+        @{
+            var str = @Model.EndingDate.HasValue ? @Model.EndingDate.Value.ToString("yy-MM-dd") : "Present";
+        }
+        <h5 class="card-title" style="font-size: medium">@Model.StartingDate.ToString("yy-MM-dd") - @str</h5>
+        <p class="text-center text-decoration-underline">Roles</p>
+
+        <ul class="list-group list-group-flush">
+            @foreach (var role in @Model.Roles)
+            {
+                <li class="list-group-item list-group-item-success">@role.Name</li>
+            }
+        </ul>
+    </div>
+</div>

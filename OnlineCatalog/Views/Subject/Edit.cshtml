@@ -1,0 +1,13 @@
+﻿@model Subject
+
+@{
+    ViewData["BtnText"] = @Localizer["SaveChanges"];
+}
+<form asp-action="Edit" method="post" role="form">
+    <h3 class="my-5">
+        Edit subject
+    </h3>
+    @Html.HiddenFor(model => model.SubjectId)
+
+    <partial name="_AddAndEdit" model="@Model" view-data="ViewData" />
+</form>

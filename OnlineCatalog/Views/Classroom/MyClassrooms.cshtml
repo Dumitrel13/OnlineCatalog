@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Classroom>
+
+@{
+    ViewData["Name"] = "Subjects";
+}
+
+<div class="container mt-2">
+
+    <div class="row tableTitle">
+        <div class="col-2">
+            <h3>@Localizer["Classroom"]</h3>
+        </div>
+        <div class="col-2">
+            <h3>@Localizer["Group"]</h3>
+        </div>
+        <div class="col-3">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    @foreach (var classroom in @Model)
+    {
+        <div class="row mt-2 gx-0 tableText">
+
+            <div class="col-2">
+                @classroom.Grade
+            </div>
+
+            <div class="col-2">
+                @classroom.Group
+            </div>
+
+            <div class="col-3 tableButton">
+                <div class="d-flex align-items-center justify-content-center">
+                    <a class="btn btn-outline-primary" asp-action="DisplaySpecificPupils" asp-controller="Pupil"
+                       asp-route-classroomId="@classroom.ClassId"><i class="bi bi-pencil-square"></i>@Localizer["ViewPupils"]</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

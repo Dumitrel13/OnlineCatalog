@@ -1,0 +1,119 @@
+﻿@model AssignSubjectsViewModel
+
+<h3 class="genericPageTitleText">
+    @Localizer["Classroom"]: @Model.Classroom.Grade @Model.Classroom.Group
+</h3>
+
+<form asp-action="AssignSubjects" asp-controller="Classroom" role="form" method="post">
+
+    <div class="buttons my-3 @Model.IsReadOnly">
+        <button class="btn" type="submit" id="save-assigned-subjects"><i class="fa-solid fa-plus"></i> @Localizer["AddSubjects"]</button>
+    </div>
+
+    @if (!@Model.IsReadOnly.IsNullOrEmpty())
+    {
+        <div class="tableButton">
+            <a class="btn" asp-action="AssignSubjects" asp-route-classroomId="@Model.Classroom.ClassId">@Localizer["AssignSubjects"]</a>
+        </div>
+
+    }
+
+    @Html.HiddenFor(model => model.Classroom.ClassId)
+
+    @Html.ValidationSummary()
+
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="container mt-2 tableTitle">
+                <div class="row">
+                    <div class="col-1">
+                        <input type="checkbox" id="select-all" />
+                    </div>
+                    <div class="col">
+                        @Localizer["AvailableSubjects"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-2" id="available-subjects">
+
+                @foreach (var subject in @Model.Subjects)
+                {
+                    <div class="row my-2 tableText">
+                        <div class="col-1">
+                            <input type="checkbox" />
+                        </div>
+                        <div class="col">
+                            @subject.Name
+                        </div>
+                        <div class="col d-none subject-id">
+                            @subject.SubjectId
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <div class="col-md-6">
+
+            <div class="container mt-2 tableTitle">
+                <div class="row">
+                    <div class="col">
+                        @Localizer["TheSubjectsOfTheClass"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-2" id="selected-subjects">
+
+                @foreach (var subject in @Model.Classroom.Subjects.OrderBy(s => s.Name))
+                {
+                    <div class="row my-2 tableText">
+                        <div class="col">
+                            @subject.Name
+                        </div>
+                        <div class="col tableButton">
+                            <a class="btn" asp-action="RemoveSubjectFromList" asp-controller="Classroom" asp-route-classroomId="@Model.Classroom.ClassId"
+                           asp-route-subjectId="@subject.SubjectId">@Localizer["RemoveSubjectFromList"]</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="SubjectsId" id="subject-Ids" />
+
+
+</form>
+
+<script>
+    $('#save-assigned-subjects').click(function () {
+        var checkedBoxes = $('input[type="checkbox"]:checked').not("#select-all");
+
+        var selectedIds = [];
+
+        checkedBoxes.each(function () {
+            var idField = $(this).closest('.row').find('.subject-id').text();
+            var id = parseInt(idField);
+            selectedIds.push(id);
+        });
+        $('#subject-Ids').val(JSON.stringify(selectedIds));
+    });
+
+    $(document).ready(function () {
+        // Select all checkboxes when the "select all" checkbox is clicked
+        $('#select-all').click(function () {
+            $('input[type="checkbox"]').prop('checked', this.checked);
+        });
+
+        // Deselect the "select all" checkbox when any of the other checkboxes are unchecked
+        $('input[type="checkbox"]').click(function () {
+            if (!this.checked) {
+                $('#select-all').prop('checked', false);
+            }
+        });
+    });
+
+</script>

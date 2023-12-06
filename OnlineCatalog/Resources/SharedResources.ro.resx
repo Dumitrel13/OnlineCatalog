@@ -1,0 +1,930 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="2fa has been disabled. You can reenable 2fa when you setup an authenticator app" xml:space="preserve">
+    <value>2fa a fost dezactivat. Puteți reactiva 2fa atunci când configurați o aplicație de autentificare</value>
+  </data>
+  <data name="A final grade already exists for this subject!" xml:space="preserve">
+    <value>O notă de tip teză deja există pentru această materie!</value>
+  </data>
+  <data name="A rating was already added, you cannot add another one!" xml:space="preserve">
+    <value>Un calificativ a fost adăugat deja, nu mai poți adăuga încă unul!</value>
+  </data>
+  <data name="Absences" xml:space="preserve">
+    <value>Absențe</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Acțiuni</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Adaugă</value>
+  </data>
+  <data name="Add a new absence" xml:space="preserve">
+    <value>Adaugă o nouă absență</value>
+  </data>
+  <data name="Add a new assignment" xml:space="preserve">
+    <value>Adaugă o nouă sarcină</value>
+  </data>
+  <data name="Add a new classroom" xml:space="preserve">
+    <value>Adaugă o nouă clasă</value>
+  </data>
+  <data name="Add a new message" xml:space="preserve">
+    <value>Adaugă un nou mesaj</value>
+  </data>
+  <data name="Add a new pupil" xml:space="preserve">
+    <value>Adaugă un nou elev</value>
+  </data>
+  <data name="Add a new role" xml:space="preserve">
+    <value>Adaugă un nou rol</value>
+  </data>
+  <data name="Add a new specialization" xml:space="preserve">
+    <value>Adaugă o nouă specializare</value>
+  </data>
+  <data name="Add a new subject" xml:space="preserve">
+    <value>Adaugă o nouă materie</value>
+  </data>
+  <data name="Add a new teacher" xml:space="preserve">
+    <value>Adaugă un nou profesor</value>
+  </data>
+  <data name="Add authenticator app" xml:space="preserve">
+    <value>Adaugă aplicația autentificator</value>
+  </data>
+  <data name="AddAbsence" xml:space="preserve">
+    <value>Adaugă absență</value>
+  </data>
+  <data name="AddANewYearStructure" xml:space="preserve">
+    <value>Adaugă o nouă structură a anului</value>
+  </data>
+  <data name="AddAssignment" xml:space="preserve">
+    <value>Adaugă sarcină</value>
+  </data>
+  <data name="AddClassroom" xml:space="preserve">
+    <value>Adaugă clasa</value>
+  </data>
+  <data name="AddGrade" xml:space="preserve">
+    <value>Adaugă notă</value>
+  </data>
+  <data name="AddKids" xml:space="preserve">
+    <value>Adaugă copiii</value>
+  </data>
+  <data name="AddMessage" xml:space="preserve">
+    <value>Adaugă mesaj</value>
+  </data>
+  <data name="AddNewPeriod" xml:space="preserve">
+    <value>Adaugă o nouă perioadă</value>
+  </data>
+  <data name="AddParent" xml:space="preserve">
+    <value>Adaugă părinte</value>
+  </data>
+  <data name="AddPupil" xml:space="preserve">
+    <value>Adaugă elev</value>
+  </data>
+  <data name="AddPupils" xml:space="preserve">
+    <value>Adaugă elevii</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Adresă</value>
+  </data>
+  <data name="AddRole" xml:space="preserve">
+    <value>Adaugă rol</value>
+  </data>
+  <data name="AddSpecialization" xml:space="preserve">
+    <value>Adaugă specializare</value>
+  </data>
+  <data name="AddSubject" xml:space="preserve">
+    <value>Adaugă materie</value>
+  </data>
+  <data name="AddSubjects" xml:space="preserve">
+    <value>Adaugă materii</value>
+  </data>
+  <data name="AddTeacher" xml:space="preserve">
+    <value>Adaugă profesor</value>
+  </data>
+  <data name="AdminOptions" xml:space="preserve">
+    <value>Opțiuni administrator</value>
+  </data>
+  <data name="AllowExam" xml:space="preserve">
+    <value>Acceptă teză</value>
+  </data>
+  <data name="An error occurred while processing your request." xml:space="preserve">
+    <value>A apărut o eroare la procesarea cererii.</value>
+  </data>
+  <data name="and" xml:space="preserve">
+    <value>și</value>
+  </data>
+  <data name="Are you sure you want to delete this classroom" xml:space="preserve">
+    <value>Ești sigur că vrei să ștergi această clasă</value>
+  </data>
+  <data name="Are you sure you want to delete this subject" xml:space="preserve">
+    <value>Ești sigur că vrei să ștergi această materie</value>
+  </data>
+  <data name="Are you sure you want to promote all classrooms" xml:space="preserve">
+    <value>Ești sigur că vrei să promovezi toate clasele</value>
+  </data>
+  <data name="Assign" xml:space="preserve">
+    <value>Asignează</value>
+  </data>
+  <data name="AssignedPupils" xml:space="preserve">
+    <value>Copiii asignați</value>
+  </data>
+  <data name="Assignments" xml:space="preserve">
+    <value>Sarcini</value>
+  </data>
+  <data name="AssignPupils" xml:space="preserve">
+    <value>Asignează elevi</value>
+  </data>
+  <data name="AssignSubjects" xml:space="preserve">
+    <value>Asignează materii</value>
+  </data>
+  <data name="Authenticator app" xml:space="preserve">
+    <value>Aplicație de autentificare</value>
+  </data>
+  <data name="AvailableSubjects" xml:space="preserve">
+    <value>Materii disponibile</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Înapoi</value>
+  </data>
+  <data name="before you can log in with a recovery code" xml:space="preserve">
+    <value>înainte de a te putea conecta cu un astfel de cod</value>
+  </data>
+  <data name="CalculateFinalGrade" xml:space="preserve">
+    <value>Calculatează media finală</value>
+  </data>
+  <data name="CalculateFinalGradeForSubject" xml:space="preserve">
+    <value>Calculează media finală pentru materia</value>
+  </data>
+  <data name="Change email" xml:space="preserve">
+    <value>Schimbă adresa de email</value>
+  </data>
+  <data name="Change password" xml:space="preserve">
+    <value>Schimbă parola</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Modifică setările contului tău</value>
+  </data>
+  <data name="Classroom" xml:space="preserve">
+    <value>Clasă</value>
+  </data>
+  <data name="click here to log in" xml:space="preserve">
+    <value>Apasă aici pentru a te conecta.</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Cod</value>
+  </data>
+  <data name="Configure authenticator app" xml:space="preserve">
+    <value>Configurați aplicația de autentificare</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirmă</value>
+  </data>
+  <data name="Confirm email" xml:space="preserve">
+    <value>Confirm adresa de email</value>
+  </data>
+  <data name="Confirmation link to change email sent. Please check your email." xml:space="preserve">
+    <value>Un link de confirmare pentru schimbarea adresei de email a fost trimis. Te rog verifica email-ul.</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirmă parola</value>
+  </data>
+  <data name="Content" xml:space="preserve">
+    <value>Conținut</value>
+  </data>
+  <data name="ContentErrorMessage" xml:space="preserve">
+    <value>Conținutul trebuie să fie între 10 și 200 de caractere!</value>
+  </data>
+  <data name="CreateAnAccount" xml:space="preserve">
+    <value>Crează un cont</value>
+  </data>
+  <data name="Current role:" xml:space="preserve">
+    <value>Rolul curent:</value>
+  </data>
+  <data name="Current subject:" xml:space="preserve">
+    <value>Materia curentă:</value>
+  </data>
+  <data name="Date" xml:space="preserve">
+    <value>Dată</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Șterge</value>
+  </data>
+  <data name="DeleteUser" xml:space="preserve">
+    <value>Șterge utilizator</value>
+  </data>
+  <data name="DeleteYearStructure" xml:space="preserve">
+    <value>Șterge stuctura anului școlar</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered" xml:space="preserve">
+    <value>Ștergerea acestor date vă va elimina definitiv contul, iar acest lucru nu poate fi recuperat</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="Disable" xml:space="preserve">
+    <value>Dezactivează</value>
+  </data>
+  <data name="Disable two-factor authentication" xml:space="preserve">
+    <value>Dezactivează autentificarea cu factori multipli</value>
+  </data>
+  <data name="Disabling 2FA does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should" xml:space="preserve">
+    <value>Dezactivarea 2FA nu schimbă cheile utilizate în aplicațiile de autentificare. Dacă doriți să schimbați cheia utilizată într-o aplicație de autentificare, trebuie</value>
+  </data>
+  <data name="DisplayClassrooms" xml:space="preserve">
+    <value>Afișează clase</value>
+  </data>
+  <data name="DisplayMyKidsScholarSituation" xml:space="preserve">
+    <value>Afișează situația școlară a copiilor mei</value>
+  </data>
+  <data name="DisplayMyScholarInformation" xml:space="preserve">
+    <value>Afișează informațiile mele școlare</value>
+  </data>
+  <data name="DisplayParents" xml:space="preserve">
+    <value>Afișează părinții</value>
+  </data>
+  <data name="DisplayPupils" xml:space="preserve">
+    <value>Afișează elevi</value>
+  </data>
+  <data name="DisplayRoles" xml:space="preserve">
+    <value>Afișează roluri</value>
+  </data>
+  <data name="DisplaySchoolDetails" xml:space="preserve">
+    <value>Afișează detaliile școlii</value>
+  </data>
+  <data name="DisplaySpecializations" xml:space="preserve">
+    <value>Afișează specializări</value>
+  </data>
+  <data name="DisplaySubjects" xml:space="preserve">
+    <value>Afișează materii</value>
+  </data>
+  <data name="DisplayTeachers" xml:space="preserve">
+    <value>Afișează profesori</value>
+  </data>
+  <data name="DisplayYearStructures" xml:space="preserve">
+    <value>Afișează structurile anilor școlari</value>
+  </data>
+  <data name="Don't have access to your authenticator device? You can" xml:space="preserve">
+    <value>Nu aveți acces la dispozitivul dvs. de autentificare? Puteți</value>
+  </data>
+  <data name="Download" xml:space="preserve">
+    <value>Descarcă</value>
+  </data>
+  <data name="Download a two-factor authenticator app like" xml:space="preserve">
+    <value>Descărcați o aplicație de autentificare cu factori multipli cum ar fi</value>
+  </data>
+  <data name="DownloadFile" xml:space="preserve">
+    <value>Descarcă fișierul</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editează</value>
+  </data>
+  <data name="EditAssignment" xml:space="preserve">
+    <value>Editează sarcina</value>
+  </data>
+  <data name="EditClassroom" xml:space="preserve">
+    <value>Editează clasa</value>
+  </data>
+  <data name="EditGrade" xml:space="preserve">
+    <value>Modifică nota</value>
+  </data>
+  <data name="EditPupil" xml:space="preserve">
+    <value>Editare elev</value>
+  </data>
+  <data name="EditTeacher" xml:space="preserve">
+    <value>Editare profesor</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="EndingDate" xml:space="preserve">
+    <value>Dată sfârșit</value>
+  </data>
+  <data name="EndingYear" xml:space="preserve">
+    <value>Sfârșit de an</value>
+  </data>
+  <data name="Enter your email" xml:space="preserve">
+    <value>Introdu adresa de email</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Eroare</value>
+  </data>
+  <data name="Error confirming your email." xml:space="preserve">
+    <value>Eroare la confirmarea adresei de email.</value>
+  </data>
+  <data name="ExamGrade" xml:space="preserve">
+    <value>Notă teză</value>
+  </data>
+  <data name="Failed to send the message!" xml:space="preserve">
+    <value>Mesajul nu a putut fi trimis!</value>
+  </data>
+  <data name="FinalGrade" xml:space="preserve">
+    <value>Media finală</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>Prenume</value>
+  </data>
+  <data name="for" xml:space="preserve">
+    <value>pentru</value>
+  </data>
+  <data name="Forget this browser" xml:space="preserve">
+    <value>Uită acest browser</value>
+  </data>
+  <data name="Forgot password confirmation" xml:space="preserve">
+    <value>Confirmare parolă uitată</value>
+  </data>
+  <data name="Forgot your password" xml:space="preserve">
+    <value>Ai uitat parola</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>De la</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Nume complet</value>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Gen</value>
+  </data>
+  <data name="Generate (2FA) recovery codes" xml:space="preserve">
+    <value>Generați coduri de recuperare</value>
+  </data>
+  <data name="generate a new set of recovery codes" xml:space="preserve">
+    <value>sa generezi un nou set de coduri de recuperare</value>
+  </data>
+  <data name="Generate two-factor authentication (2FA) recovery codes" xml:space="preserve">
+    <value>Generați coduri de recuperare pentru autentificarea cu factori multipli</value>
+  </data>
+  <data name="Generating new recovery codes does not change the keys used in authenticator apps. If you wish to change the key used in an authenticator app you should" xml:space="preserve">
+    <value>Generarea de noi coduri de recuperare nu schimbă cheile utilizate în aplicațiile de autentificare. Dacă doriți să schimbați cheia utilizată într-o aplicație de autentificare, trebuie</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>Notă</value>
+  </data>
+  <data name="GradeClassroom" xml:space="preserve">
+    <value>An clasă</value>
+  </data>
+  <data name="Grades" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="GradeType" xml:space="preserve">
+    <value>Tipul notei</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Grupă</value>
+  </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Bună</value>
+  </data>
+  <data name="If you do not complete your authenticator app configuration you may lose access to your account." xml:space="preserve">
+    <value>Dacă nu completați configurația aplicației de autentificare, puteți pierde accesul la contul dvs.</value>
+  </data>
+  <data name="If you lose your device and don't have the recovery codes you will lose access to your account." xml:space="preserve">
+    <value>Dacă pierdeți dispozitivul și nu aveți codurile de recuperare, veți pierde accesul la contul dvs.</value>
+  </data>
+  <data name="If you reset your authenticator key your authenticator app will not work until you reconfigure it." xml:space="preserve">
+    <value>Dacă resetați cheia de autentificare, aplicația dvs. de autentificare nu va funcționa până când o reconfigurați.</value>
+  </data>
+  <data name="Interval" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="into your two factor authenticator app. Spaces and casing do not matter." xml:space="preserve">
+    <value>în aplicația dvs. de autentificare cu factori multipli. Spațiile nu contează.</value>
+  </data>
+  <data name="Invalid authenticator code." xml:space="preserve">
+    <value>Cod de autentificare invalid.</value>
+  </data>
+  <data name="Invalid login attempt." xml:space="preserve">
+    <value>Încercare de autentificare invalidă.</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Este activ</value>
+  </data>
+  <data name="IsPrincipal" xml:space="preserve">
+    <value>Este director</value>
+  </data>
+  <data name="Justified" xml:space="preserve">
+    <value>Motivată</value>
+  </data>
+  <data name="JustifyAbsence" xml:space="preserve">
+    <value>Motivează absența</value>
+  </data>
+  <data name="JustifyAbsences" xml:space="preserve">
+    <value>Motivează absențe</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="Log in" xml:space="preserve">
+    <value>Autentificare</value>
+  </data>
+  <data name="log in with a recovery code" xml:space="preserve">
+    <value>să vă conectați cu un cod de recuperare</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Conectează-te</value>
+  </data>
+  <data name="Manage Email" xml:space="preserve">
+    <value>Gestionează adresa de email</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Administrează contul tău</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Meniu</value>
+  </data>
+  <data name="Message send!" xml:space="preserve">
+    <value>Mesajul a fost trimis!</value>
+  </data>
+  <data name="MessageDetails" xml:space="preserve">
+    <value>Detalii mesaj</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Mesaje</value>
+  </data>
+  <data name="MessagesRegarding" xml:space="preserve">
+    <value>Mesaje cu privire la</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="New parent account" xml:space="preserve">
+    <value>Cont nou de părinte</value>
+  </data>
+  <data name="New teacher account" xml:space="preserve">
+    <value>Cont nou de profesor</value>
+  </data>
+  <data name="NewEmail" xml:space="preserve">
+    <value>Email nou</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Parola nouă</value>
+  </data>
+  <data name="No school registered yet!" xml:space="preserve">
+    <value>Nici o școală nu a fost înregistrată încă!</value>
+  </data>
+  <data name="No values were added!" xml:space="preserve">
+    <value>Nu au fost adăugate date suficiente!</value>
+  </data>
+  <data name="OldPassword" xml:space="preserve">
+    <value>Parola veche</value>
+  </data>
+  <data name="Once you have scanned the QR code or input the key above, your two factor authentication app will provide you with a unique code. Enter the code in the confirmation box below." xml:space="preserve">
+    <value>După ce ați scanat codul QR sau introduceți cheia de mai sus, aplicația dvs. de autentificare cu factori multipli vă va oferi un cod unic. Introduceți codul în caseta de confirmare de mai jos.</value>
+  </data>
+  <data name="OnlineCatalog" xml:space="preserve">
+    <value>Catalog online</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>sau</value>
+  </data>
+  <data name="Parent" xml:space="preserve">
+    <value>Părinte</value>
+  </data>
+  <data name="ParentOptions" xml:space="preserve">
+    <value>Opțiuni părinte</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Parolă</value>
+  </data>
+  <data name="PeriodTitle" xml:space="preserve">
+    <value>Titlul perioadei</value>
+  </data>
+  <data name="Personal data" xml:space="preserve">
+    <value>Date personale</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Număr de telefon</value>
+  </data>
+  <data name="Please check your email to reset your password." xml:space="preserve">
+    <value>Verifică adresa de email pentru a reseta parola.</value>
+  </data>
+  <data name="Please enter a value for this field!" xml:space="preserve">
+    <value>Introdu o valoare pentru acest câmp!</value>
+  </data>
+  <data name="Please select a file!" xml:space="preserve">
+    <value>Selectează un fișier!</value>
+  </data>
+  <data name="PrincipalOptions" xml:space="preserve">
+    <value>Opțiuni director</value>
+  </data>
+  <data name="Privacy and cookie policy have not been accepted" xml:space="preserve">
+    <value>Politica de confidențialitate și de utilizare a cookie-urilor nu a fost acceptată</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="PromoteClassrooms" xml:space="preserve">
+    <value>Promovează clasele</value>
+  </data>
+  <data name="Pupil" xml:space="preserve">
+    <value>Elev</value>
+  </data>
+  <data name="Pupil's full name" xml:space="preserve">
+    <value>Numele complet al elevului</value>
+  </data>
+  <data name="PupilOptions" xml:space="preserve">
+    <value>Opțiuni elev</value>
+  </data>
+  <data name="Pupils" xml:space="preserve">
+    <value>Elevi</value>
+  </data>
+  <data name="PupilsOfThisClassroom" xml:space="preserve">
+    <value>Elevii acestei clase</value>
+  </data>
+  <data name="Put these codes in a safe place." xml:space="preserve">
+    <value>Stocați aceste coduri într-un loc sigur.</value>
+  </data>
+  <data name="ReadMessages" xml:space="preserve">
+    <value>Mesaje citite</value>
+  </data>
+  <data name="Recovery codes" xml:space="preserve">
+    <value>Coduri de recuperare</value>
+  </data>
+  <data name="recovery codes left" xml:space="preserve">
+    <value>coduri de recuperare rămase</value>
+  </data>
+  <data name="Regarding" xml:space="preserve">
+    <value>Cu privire la</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Inregistrează-te</value>
+  </data>
+  <data name="RegisterANewSchool" xml:space="preserve">
+    <value>Înregistrează o nouă școală</value>
+  </data>
+  <data name="RegisterSchool" xml:space="preserve">
+    <value>Înregistrează școala</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Ține-mă minte</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Elimină</value>
+  </data>
+  <data name="RemoveKidFromList" xml:space="preserve">
+    <value>Elimină elevul din listă</value>
+  </data>
+  <data name="RemoveSubjectFromList" xml:space="preserve">
+    <value>Elimină materia din listă</value>
+  </data>
+  <data name="Resend" xml:space="preserve">
+    <value>Retrimite</value>
+  </data>
+  <data name="Resend email confirmation" xml:space="preserve">
+    <value>Retrimiteți confirmarea prin email</value>
+  </data>
+  <data name="Reset" xml:space="preserve">
+    <value>Resetează</value>
+  </data>
+  <data name="Reset authenticator app" xml:space="preserve">
+    <value>Resetează aplicația autentificator</value>
+  </data>
+  <data name="Reset authenticator key" xml:space="preserve">
+    <value>Resetați cheia autentificatorului</value>
+  </data>
+  <data name="Reset Password" xml:space="preserve">
+    <value>Resetează parola</value>
+  </data>
+  <data name="Reset password confirmation" xml:space="preserve">
+    <value>Confirmare resetare parolă</value>
+  </data>
+  <data name="Reset recovery codes" xml:space="preserve">
+    <value>Resetează codurile de recuperare</value>
+  </data>
+  <data name="reset your authenticator keys" xml:space="preserve">
+    <value>să schimbați cheile de autentificare</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roluri</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Salvează</value>
+  </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Salvează schimbările</value>
+  </data>
+  <data name="Scan the QR Code or enter this key" xml:space="preserve">
+    <value>Scanați codul QR sau introduceți această cheie</value>
+  </data>
+  <data name="SchoolDetails" xml:space="preserve">
+    <value>Detaliile școlii</value>
+  </data>
+  <data name="Score" xml:space="preserve">
+    <value>Notă</value>
+  </data>
+  <data name="Select a classroom" xml:space="preserve">
+    <value>Selectează o clasă</value>
+  </data>
+  <data name="Select a role" xml:space="preserve">
+    <value>Selectează un rol</value>
+  </data>
+  <data name="Select a subject" xml:space="preserve">
+    <value>Selectează o materie</value>
+  </data>
+  <data name="SelectedPupil" xml:space="preserve">
+    <value>Elevul selectat</value>
+  </data>
+  <data name="SelectGender" xml:space="preserve">
+    <value>Selectează genul</value>
+  </data>
+  <data name="SelectPhoto" xml:space="preserve">
+    <value>Alege imagine</value>
+  </data>
+  <data name="Send verification email" xml:space="preserve">
+    <value>Trimite email de confirmare</value>
+  </data>
+  <data name="SendMessage" xml:space="preserve">
+    <value>Trimite mesaj</value>
+  </data>
+  <data name="Set up authenticator app" xml:space="preserve">
+    <value>Configurează aplicația autentificator</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>Dată început</value>
+  </data>
+  <data name="StartingYear" xml:space="preserve">
+    <value>Început de an</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>Stare</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Materie</value>
+  </data>
+  <data name="SubjectHours" xml:space="preserve">
+    <value>Ore materie pe saptamana</value>
+  </data>
+  <data name="Subjects" xml:space="preserve">
+    <value>Materii</value>
+  </data>
+  <data name="Teacher's full name" xml:space="preserve">
+    <value>Numele complet al profesorului</value>
+  </data>
+  <data name="TeacherDetails" xml:space="preserve">
+    <value>Detalii profesor</value>
+  </data>
+  <data name="TeacherOptions" xml:space="preserve">
+    <value>Opțiuni profesor</value>
+  </data>
+  <data name="Teachers" xml:space="preserve">
+    <value>Profesori</value>
+  </data>
+  <data name="Thank you for confirming your email." xml:space="preserve">
+    <value>Mulțumim că ai confirmat adresa de email.</value>
+  </data>
+  <data name="The current browser has been forgotten. When you login again from this browser you will be prompted for your 2fa code." xml:space="preserve">
+    <value>Browserul curent a fost uitat. Când vă conectați din nou de la acest browser, vi se va solicita codul 2fa.</value>
+  </data>
+  <data name="The password and confirmation password do not match." xml:space="preserve">
+    <value>Parola și confirmarea acesteia nu se potrivesc.</value>
+  </data>
+  <data name="The password is randomly generated!" xml:space="preserve">
+    <value>Parola este generată aleatoriu!</value>
+  </data>
+  <data name="The type of the selected score does not match the type of the existing grades!" xml:space="preserve">
+    <value>Tipul notei selectat nu se potrivește cu tipul notelor deja existente!</value>
+  </data>
+  <data name="The {0} must be at least {2} and at max {1} characters long." xml:space="preserve">
+    <value>Parola trebuie să conțină între {2} și {1} caractere </value>
+  </data>
+  <data name="TheSubjectsOfTheClass" xml:space="preserve">
+    <value>Materiile acestei clase</value>
+  </data>
+  <data name="This action only disables" xml:space="preserve">
+    <value>Această acțiune doar dezactivează</value>
+  </data>
+  <data name="This process disables 2FA until you verify your authenticator app." xml:space="preserve">
+    <value>Acest proces dezactivează 2FA până când verificați aplicația de autentificare.</value>
+  </data>
+  <data name="This pupil has no grades!" xml:space="preserve">
+    <value>Acest elev nu are note!</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Titlu</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Pâna la</value>
+  </data>
+  <data name="To use an authenticator app go through the following steps" xml:space="preserve">
+    <value>Pentru a utiliza o aplicație de autentificare parcurgeți pașii următori</value>
+  </data>
+  <data name="Towards" xml:space="preserve">
+    <value>Către</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Autentificare cu factori multipli</value>
+  </data>
+  <data name="UnasignedPupils" xml:space="preserve">
+    <value>Elevi neasignati</value>
+  </data>
+  <data name="Unjustified" xml:space="preserve">
+    <value>Nemotivată</value>
+  </data>
+  <data name="UnreadMessages" xml:space="preserve">
+    <value>Mesaje necitite</value>
+  </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Schimbă parola</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nume utilizator</value>
+  </data>
+  <data name="Verification Code" xml:space="preserve">
+    <value>Codul de verificare</value>
+  </data>
+  <data name="Verification email sent. Please check your email." xml:space="preserve">
+    <value>Email de confirmare trimis. Te rog verifică adresa de email.</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Verifică</value>
+  </data>
+  <data name="View" xml:space="preserve">
+    <value>Vizualizează</value>
+  </data>
+  <data name="ViewAssignedPupils" xml:space="preserve">
+    <value>Vizualizează elevii asignați</value>
+  </data>
+  <data name="ViewAssignedSubjects" xml:space="preserve">
+    <value>Vizualizează materiile asignate</value>
+  </data>
+  <data name="ViewMessages" xml:space="preserve">
+    <value>Vizualizează mesaje</value>
+  </data>
+  <data name="ViewPupils" xml:space="preserve">
+    <value>Vizualizează elevii</value>
+  </data>
+  <data name="ViewTeachers" xml:space="preserve">
+    <value>Vizualizează profesorii</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Bun venit!</value>
+  </data>
+  <data name="YearOfTheStructure" xml:space="preserve">
+    <value>Anul structurii anului școlar</value>
+  </data>
+  <data name="YearStructures" xml:space="preserve">
+    <value>Structurile anilor școlari</value>
+  </data>
+  <data name="You can" xml:space="preserve">
+    <value>Poți</value>
+  </data>
+  <data name="You cannot calculate the final grade because this subject has no grades!" xml:space="preserve">
+    <value>Nu poți calcula nota finală deoarece nu există note pentru această materie!</value>
+  </data>
+  <data name="You have" xml:space="preserve">
+    <value>Ai</value>
+  </data>
+  <data name="You have 1 recovery code left" xml:space="preserve">
+    <value>Ai un singur cod de recuperare rămas</value>
+  </data>
+  <data name="You have generated new recovery codes." xml:space="preserve">
+    <value>Ați generat noi coduri de recuperare.</value>
+  </data>
+  <data name="You have no recovery codes left" xml:space="preserve">
+    <value>Nu ai nici un cod de recuperare</value>
+  </data>
+  <data name="You must" xml:space="preserve">
+    <value>Trebuie</value>
+  </data>
+  <data name="You must accept the policy before you can enable two factor authentication" xml:space="preserve">
+    <value>Trebuie să acceptați politica înainte de a putea activa autentificarea cu factori multipli</value>
+  </data>
+  <data name="You should" xml:space="preserve">
+    <value>Ar trebui</value>
+  </data>
+  <data name="Your account contains personal data that you have given us. This page allows you to download or delete that data" xml:space="preserve">
+    <value>Contul dvs. conține date personale pe care ni le-ați oferit. Această pagină vă permite să descărcați sau să ștergeți datele respective</value>
+  </data>
+  <data name="Your authenticator app key has been reset, you will need to configure your authenticator app using the new key." xml:space="preserve">
+    <value>Cheia aplicației dvs. de autentificare a fost resetată, va trebui să configurați aplicația de autentificare folosind noua cheie.</value>
+  </data>
+  <data name="Your email is unchanged." xml:space="preserve">
+    <value>Adresa de email este neschimbata.</value>
+  </data>
+  <data name="Your login is protected with an authenticator app. Enter your authenticator code below" xml:space="preserve">
+    <value>Autentificare dvs. este protejată cu o aplicație de autentificare. Introduceți codul de autentificare mai jos</value>
+  </data>
+  <data name="Your password has been changed." xml:space="preserve">
+    <value>Parola ta a fost schimbată.</value>
+  </data>
+  <data name="Your password has been reset. Please" xml:space="preserve">
+    <value>Parola a fost resetată. </value>
+  </data>
+</root>

@@ -1,0 +1,45 @@
+﻿@model ApplicationUser
+
+<div class="form-group col-5 inputStyle">
+    <input asp-for="FirstName" type="text" required="" readonly="@(ViewData["IsReadonly"]!)"
+           oninvalid="this.setCustomValidity('@Localizer["Please enter a value for this field!"]')"
+           oninput="setCustomValidity('')"/>
+    <label>@Localizer["FirstName"]</label>
+    <span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+
+<div class="form-group col-5 inputStyle">
+    <input asp-for="LastName" type="text" required="" readonly="@(ViewData["IsReadonly"]!)"
+           oninvalid="this.setCustomValidity('@Localizer["Please enter a value for this field!"]')"
+           oninput="setCustomValidity('')" />
+    <label>@Localizer["LastName"]</label>
+    <span asp-validation-for="LastName" class="text-danger"></span>
+</div>
+
+<div class="form-group col-5 inputStyle">
+    <input asp-for="Address" type="text" required="" readonly="@(ViewData["IsReadonly"]!)" 
+           oninvalid="this.setCustomValidity('@Localizer["Please enter a value for this field!"]')"
+           oninput="setCustomValidity('')" />
+    <label>@Localizer["Address"]</label>
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+
+@*<div class="form-group col-5 inputStyle">
+    <input asp-for="Gender" type="text" required="" readonly="@(ViewData["IsReadonly"]!)" />
+    <label>@Localizer["Gender"]</label>
+    <span asp-validation-for="Gender" class="text-danger"></span>
+</div>*@
+
+<div class="form-group col-5 inputStyle">
+    <input asp-for="Email" type="text" required="" readonly="@(ViewData["IsReadonly"]!)" 
+           oninvalid="this.setCustomValidity('@Localizer["Please enter a value for this field!"]')"
+           oninput="setCustomValidity('')" />
+    <label>@Localizer["Email"]</label>
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <input asp-for="IsActive" type="checkbox" disabled="@(ViewData["IsReadonly"]!)"/>
+    <label>@Localizer["IsActive"]?</label>
+    <span asp-validation-for="IsActive" class="text-danger"></span>
+</div>

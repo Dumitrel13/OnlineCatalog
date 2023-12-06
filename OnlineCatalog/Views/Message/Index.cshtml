@@ -1,0 +1,66 @@
+﻿@model Tuple<int, bool>
+<body class="background"></body>
+
+<div class="popup-message @ViewData["IsFailedMsgVisible"]">@ViewData["TopMessage"]</div>
+
+<div class="container-fluid fixed-left background">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white">
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline genericPageTitleText">@Localizer["Menu"]</span>
+                </a>
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="w-100 linkStyle">
+                        <a href="#new-messages" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            @Localizer["UnreadMessages"]
+                        </a>
+                    </li>
+                    <li class="linkStyle">
+                        <a href="#old-messages" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            @Localizer["ReadMessages"]
+                        </a>
+                    </li>
+                    <li class="@ViewData["IsCreateMessageVisible"] linkStyle">
+                        <a href="#create-message" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
+                            @Localizer["SendMessage"]
+                        </a>
+                    </li>
+                </ul>
+                <hr />
+            </div>
+        </div>
+        <div class="col py-3 background">
+            <div id="new-messages" class="collapse background">
+                @await Component.InvokeAsync("DisplayMessage", new {personId = @Model.Item1, isRead = false})
+            </div>
+            <div id="old-messages" class="collapse background">
+                @await Component.InvokeAsync("DisplayMessage", new {personId = @Model.Item1, isRead = true})
+            </div>
+            @if (@Model.Item2)
+            {
+                <div id="create-message" class="collapse background">
+                    @await Component.InvokeAsync("CreateMessage", new {pupilId = @Model.Item1})
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#menu a').click(function () {
+            //var target = $(this).attr('href');
+            //$('.collapse').collapse('hide');
+            //$(target).collapse('show');
+
+            // hide all content sections
+            $(".collapse").removeClass("show");
+            // show the selected content section
+            $($(this).attr("href")).addClass("show");
+        });
+        $('.popup-message').fadeIn('fast', function() {
+            $(this).delay(3000).fadeOut('fast');
+        });
+    });
+</script>

@@ -1,0 +1,111 @@
+﻿@model AssignPupilsViewModel
+
+<h3 class="genericPageTitleText">
+    @Localizer["Classroom"]: @Model.Classroom.Grade @Model.Classroom.Group
+</h3>
+
+<form asp-action="AssignPupils" asp-controller="Classroom" role="form" method="post">
+
+    <div class="buttons my-3">
+        <button class="btn" type="submit" id="save-assigned-pupils"><i class="fa-solid fa-plus"></i> @Localizer["AddPupils"]</button>
+    </div>
+
+    @Html.HiddenFor(model => model.Classroom.ClassId)
+
+    @Html.ValidationSummary()
+    <div class="row">
+        <div class="col-md-6">
+
+            <div class="container mt-2 tableTitle">
+                <div class="row">
+                    <div class="col-1">
+                        <input type="checkbox" id="select-all"/>
+                    </div>
+                    <div class="col">
+                        @Localizer["Pupils"]
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-2" id="table-body">
+
+                @foreach (var pupil in @Model.Pupils.OrderBy(p => p.LastName).ThenBy(p => p.FirstName))
+                {
+                    <div class="row my-2 tableText">
+                        <div class="col-1">
+                            <input type="checkbox" name="select-row"/>
+                        </div>
+                        <div class="col">
+                            @pupil.FirstName @pupil.LastName
+                        </div>
+                        <div class="col d-none pupil-id">
+                            @pupil.Id
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+        
+        <div class="col-md-6">
+
+            <div class="container mt-2 tableTitle">
+                <div class="row">
+                    <div class="col">
+                        @Localizer["PupilsOfThisClassroom"]
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container mt-2" id="table-body">
+
+                @foreach (var pupil in @Model.Classroom.Pupils.OrderBy(p => p.LastName).ThenBy(p => p.FirstName))
+                {
+                    <div class="row my-2 tableText">
+                        <div class="col">
+                            @pupil.FirstName @pupil.LastName
+                        </div>
+                        <div class="col tableButton">
+                            <a class="btn" asp-action="RemovePupilFromList" asp-controller="Classroom" asp-route-classroomId="@Model.Classroom.ClassId"
+                               asp-route-pupilId="@pupil.Id">@Localizer["RemoveKidFromList"]</a>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+    <input type="hidden" asp-for="PupilsIds" id="pupil-Ids" />
+
+
+</form>
+
+<script>
+    $('#save-assigned-pupils').click(function () {
+        var checkedBoxes = $('input[type="checkbox"]:checked').not("#select-all");
+
+        var selectedIds = [];
+
+        checkedBoxes.each(function () {
+            var idField = $(this).closest('.row').find('.pupil-id').text();
+            var id = parseInt(idField);
+            selectedIds.push(id);
+        });
+        $('#pupil-Ids').val(JSON.stringify(selectedIds));
+    });
+
+    $(document).ready(function () {
+        // Select all checkboxes when the "select all" checkbox is clicked
+        $('#select-all').click(function () {
+            $('input[type="checkbox"]').prop('checked', this.checked);
+        });
+
+        // Deselect the "select all" checkbox when any of the other checkboxes are unchecked
+        $('input[type="checkbox"]').click(function () {
+            if (!this.checked) {
+                $('#select-all').prop('checked', false);
+            }
+        });
+    });
+
+</script>

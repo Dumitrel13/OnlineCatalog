@@ -1,0 +1,126 @@
+﻿@model DisplayAssignmentsViewModel
+
+<div class="container mt-2">
+
+    <h3 class="genericPageTitleText">
+        @Model.TeacherFullName
+    </h3>
+
+    <div class="input-box">
+        <div class="year-filter">
+            <button class="arrow-button" id="prev-year">
+                <i class="fa fa-chevron-left fa-lg"></i>
+            </button>
+            <input class="year-input" id="displayed-year" readonly="">
+            <button class="arrow-button" id="next-year">
+                <i class="fa fa-chevron-right fa-lg"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <div class="tableButton">
+        <a class="btn mt-2 mb-4" asp-action="Add" asp-route-teacherId="@Model.TeacherId" asp-controller="TeacherAssignment" type="button">
+            <i class="fa-solid fa-plus"></i> @Localizer["Add a new assignment"]
+        </a>
+    </div>
+
+    <div class="row tableTitle">
+        <div class="col">
+            <h3>@Localizer["StartingDate"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["EndingDate"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Role"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Subject"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Classroom"]</h3>
+        </div>
+        <div class="col">
+            <h3>@Localizer["Actions"]</h3>
+        </div>
+    </div>
+
+    <div id="table-body">
+
+        @foreach (var assignment in @Model.TeacherAssignments)
+        {
+            <div class="row mt-2 tableText">
+                <div class="col">
+                    @assignment.StartingDate.Day @DateTimeFormatInfo.CurrentInfo.GetMonthName(@assignment.StartingDate.Month)
+                    @assignment.StartingDate.Year
+                </div>
+                <div class="col">
+                    @assignment.EndingDate.Day @DateTimeFormatInfo.CurrentInfo.GetMonthName(@assignment.EndingDate.Month)
+                    @assignment.EndingDate.Year
+                </div>
+                <div class="col">
+                    @assignment.ApplicationRole.Name
+                </div>
+                <div class="col">
+                    @assignment.Subject.Name
+                </div>
+                <div class="col">
+                    @assignment.Classroom.Grade @assignment.Classroom.Group
+                </div>
+                <div class="col tableButton">
+                    @if (@assignment.EndingDate.Date > DateTime.Now.Date)
+                    {
+                        <a class="btn" asp-action="Edit" asp-route-assignmentId="@assignment.TeacherAssignmentId"
+                   asp-controller="TeacherAssignment"><i class="fa-solid fa-pen-to-square"></i> @Localizer["Edit"]</a>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+
+</div>
+
+<script>
+    var teacherId = @Model.TeacherId;
+    var currentYear = new Date().getFullYear();
+    var displayedYear = currentYear;
+    $('#displayed-year').val(displayedYear);
+    updateButtonState();
+    updateTable();
+
+    $(function () {
+        $('#prev-year').click(function () {
+            displayedYear--;
+            $('#displayed-year').val(displayedYear);
+            updateButtonState();
+            updateTable();
+        });
+
+        $('#next-year').click(function () {
+            displayedYear++;
+            $('#displayed-year').val(displayedYear);
+            updateButtonState();
+            updateTable();
+        });
+    });
+
+    function updateButtonState() {
+        var nextButton = $('#next-year');
+        if (displayedYear >= currentYear) {
+            nextButton.prop('disabled', true);
+        } else {
+            nextButton.prop('disabled', false);
+        }
+    }
+
+    function updateTable() {
+        $.ajax({
+            url: `@Url.Content("~")${`/TeacherAssignment/Index?teacherId=${teacherId}&year=${displayedYear}`}`,
+            method: 'GET',
+            success: function (data) {
+                $('#table-body').load(`@Url.Content("~")${`/TeacherAssignment/Index?teacherId=${teacherId}&year=${displayedYear} #table-body`}`);
+            }
+        });
+    }
+</script>

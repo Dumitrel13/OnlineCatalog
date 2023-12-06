@@ -1,0 +1,57 @@
+﻿@model AddAbsenceViewModel
+
+<form asp-action="Add" asp-controller="Absence" method="post" role="form">
+    <h3 class="my-5 genericPageTitleText">
+        @Localizer["Add a new absence"]
+    </h3>
+
+    @Html.ValidationSummary()
+
+    <div class="col-6">
+        <div class="row g-2">
+
+            @Html.HiddenFor(model => model.Absence.Teacher.Id)
+            @Html.HiddenFor(model => model.Absence.Pupil.Id)
+            @Html.HiddenFor(model => model.Absence.Subject.SubjectId)
+            @Html.HiddenFor(model => model.Absence.Date)
+
+            <div class="col-5 inputStyle">
+                <input asp-for="Absence.StartingHour" type="time" value="08:00" id="from">
+                <label asp-for="Absence.StartingHour">@Localizer["From"]:</label>
+            </div>
+
+            <div class="col-5 inputStyle">
+                <input asp-for="Absence.EndingHour" type="time" value="09:00" id="to">
+                <label asp-for="Absence.EndingHour">@Localizer["To"]:</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="FormattedDate" name="FormattedDate" readonly="readonly" />
+                <label>@Localizer["Date"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="TeacherFullName" readonly="readonly" />
+                <label>@Localizer["Teacher's full name"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="PupilFullName" readonly="readonly" />
+                <label>@Localizer["Pupil's full name"]</label>
+            </div>
+
+            <div class="col-5 mt-4 inputStyle">
+                <input asp-for="Absence.Subject.Name" readonly="readonly" />
+                <label>@Localizer["Subject"]</label>
+            </div>
+
+        </div>
+
+        <div class="mt-3">
+            <div class="col-md-offset-2 col-md-5 buttonStyle">
+                <input type="submit" class="btn btn-secondary" value="@Localizer["AddAbsence"]" />
+            </div>
+        </div>
+
+    </div>
+</form>
